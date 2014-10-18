@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<!--[if IE ]>      <html lang="en" xmlns:fb="http://ogp.me/ns/fb#" class="ie"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en" xmlns:fb="http://ogp.me/ns/fb#"> <!--<![endif]-->
+
+<head>
+    <meta content='text/html;charset=UTF-8' http-equiv='Content-type'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <meta content="authenticity_token" name="csrf-param" />
+    <meta content="o7BR8A7l3Mbgib6AJ2ed42wcw5nWjhx1YjNO7rV3DNo=" name="csrf-token" />
+    <!-- Open Graph protocol: -->
+    <meta property="og:title" content="GitHub Tutorial - Code School" />
+    <meta property="og:description" content="Learn advanced tips, tricks, and proven best practices for collaborating more effectively with GitHub." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://www.codeschool.com/courses/mastering-github" />
+    <meta property="og:image" content="https://d1ffx7ull4987f.cloudfront.net/images/courses/large_badge/114/mastering-github-39ea078306b429a7ff671a7e9ee1279d.png" />
+    <meta property="og:site_name" content="Code School" />
+    <meta property="fb:admins" content="5200953" /><meta property="fb:admins" content="40012883" />
+    <meta content='summary' name='twitter:card'>
+    <meta content='@codeschool' name='twitter:site'>
+    <meta content='Mastering GitHub' name='twitter:title'>
+    <meta content='Better collaboration through GitHub.' name='twitter:description'>
+    <meta content='' name='twitter:creator'>
+    <meta content='https://d1ffx7ull4987f.cloudfront.net/images/achievements/large_badge/443/complete-mastering-github-e998c0ab56c79b9074ad5e3c1427691a.png' name='twitter:image:src'>
+    <meta content='' name='twitter:domain'>
+
+    <title>GitHub Tutorial - Code School</title>
+    <link href='https://d1tijy5l7mg5kk.cloudfront.net/assets/favicon-2dd7fb4d42b0a663fe5123e30d9ea3d2.ico' rel='shortcut icon' type='image/x-icon'>
+    <link href='https://d1tijy5l7mg5kk.cloudfront.net/assets/apple-touch-icons/180x180-f292ff7f84322dc035e4bc2e16a1afc8.png' rel='apple-touch-icon'>
+    <link href='https://d1tijy5l7mg5kk.cloudfront.net/assets/apple-touch-icons/192x192-7de436f1d3c3c4741a6be84498f4cc25.png' rel='icon' sizes='192x192'>
+
+
+    <meta name="description" content="Learn advanced tips, tricks, and proven best practices for collaborating more effectively with GitHub." />
+    <link href='/courses/mastering-github' rel='canonical'>
+    <link href="https://d1tijy5l7mg5kk.cloudfront.net/assets/application-b08ee2062f18a5430664e44779b24796.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+</head>
+<body class=' courses courses-show '>
+<div class='dn db--m'>
+
+</div>
+<ul class='js-notes has-note'></ul>
+<!-- Header -->
+<header class='header row has-dropdown ovh ovv--m'>
+    <div class='cell'>
+        <div class='g'>
+            <div class='g-b g-b--m--1of4'>
+                <div class='header-item header-item--brand brand fl' itemscope itemtype='http://schema.org/Organization'>
+                    <a href="/" class="brand-link" itemprop="url"><img alt="Code School" class="brand-img" height="34" itemprop="logo" src="https://d1tijy5l7mg5kk.cloudfront.net/assets/logo-dd0420d66e370a02a3f4ba92e67ebb3a.svg" width="189" />
+                    </a></div>
+            </div>
+            <div class='g-b g-b--m--3of4'>
+                <nav class='header-item nav' id='site-navigation'>
+                    <a href="#" class="nav-menu fr"><div class='nav-box'></div>
+                        <div class='nav-menu-stack'>
+                            <b class='srt'>Menu</b>
+                        </div>
+                    </a><ol class='nav-list list fr'>
+                    <li class='is-active list-item nav-item'><a href="https://www.codeschool.com/courses" class="nav-item-link list-item-link">Courses</a></li>
+                    <li class='nav-item list-item'><a href="https://www.codeschool.com/screencasts" class="nav-item-link list-item-link">Screencasts</a></li>
+                    <li class='nav-item list-item'><a href="https://www.codeschool.com/support" class="nav-item-link list-item-link">Support</a></li>
+                    <li class='nav-item list-item dn db--m'>
+                        <div class='dropdown dropdown--nested dropdown--user has-userMenu js-dropdown'>
+                            <a href="https://www.codeschool.com/account" class="userMenu js-dropdown-btn"><img alt="" class="thumb userMenu-thumb" height="40" src="https://secure.gravatar.com/avatar/61c7fa89bbdd20a4adcba802fe23dd06.jpg?s=40&r=pg&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F1c02274fedcce55a289172bfb8db25ab.jpg%3Fs%3D40%26r%3Dpg" width="40" />
+                                <i class='icn userMenu-icn'></i>
+                            </a><ul class='dropdown-menu list'>
+                            <li class='dropdown-item list-item'><a href="https://www.codeschool.com/account" class="dropdown-item-link list-item-link">My Dashboard</a></li>
+                            <li class='dropdown-item list-item'><a href="/account/edit" class="dropdown-item-link list-item-link">My Profile</a></li>
+                            <li class='dropdown-item list-item'><a href="/users/774225" class="dropdown-item-link list-item-link">My Report Card</a></li>
+                            <li class='dropdown-item list-item'><a href="/users/sign_out" class="dropdown-item-link list-item-link">Sign Out</a></li>
+                        </ul>
+                        </div>
+                    </li>
+<span class='db dn--m'>
+<li class='nav-item list-item'><a href="https://www.codeschool.com/account" class="nav-item-link list-item-link">My Dashboard</a></li>
+<li class='nav-item list-item'><a href="/account/edit" class="nav-item-link list-item-link">My Profile</a></li>
+<li class='nav-item list-item'><a href="/users/774225" class="nav-item-link list-item-link">My Report Card</a></li>
+<li class='nav-item list-item'><a href="/users/sign_out" class="nav-item-link list-item-link">Sign Out</a></li>
+</span>
+                </ol>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<main class='content'><div class='hero hero--banner hero--banner--dark row row--d' style="background: #112339 url('https://d1ffx7ull4987f.cloudfront.net/images/courses/hero/114/mastering-github-31880b6f9b6d0a462a9795e1051c6146.jpg') top center no-repeat;">
+    <div class='cell well well--xl'>
+        <div class='g'>
+            <div class='g-b g-b--m--3of4'>
+                <div class='bucket bucket--l bucket--flag mts--m tac tal--m'>
+                    <div class='bucket-media'>
+                        <div class='badge badge--m dn db--m'>
+                            <img alt="Badge for Completion of Mastering Github" class="badge-img" height="200" src="https://d1ffx7ull4987f.cloudfront.net/images/achievements/large_badge/443/complete-mastering-github-e998c0ab56c79b9074ad5e3c1427691a.png" width="200" />
+                        </div>
+                    </div>
+                    <div class='bucket-content'>
+                        <p class='mbxs'><a href="/paths/git" class="opf tag tag--git">Git</a></p>
+                        <h1 class='hero-title mbs ttu'>Mastering GitHub</h1>
+                        <a href="/courses/mastering-github/goto" class="btn btn--wide">Start Course Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='row'>
+<div class='cell well well--l'>
+<div class='g'>
+    <div class='g-b g-b--l--3of5'>
+        <div class='mbm'>
+            <div class='mbl--m'>
+                <h2 class='label'>Course Description</h2>
+                <p>Learn advanced tips, tricks, and proven best practices for collaborating more effectively with GitHub.</p>
+            </div>
+            <h2 class='label'>Course Overview</h2>
+            <div class='card card--b mbm--m mbs' id='course-overview'>
+                <div class='bucket bucket--flag'>
+                    <div class='bucket-media dn db--m'>
+                        <div class='badge'>
+                            <img alt="Level 1 Complete" class="badge-img" height="110" src="https://d1ffx7ull4987f.cloudfront.net/images/achievements/large_badge/436/level-1-complete-36984e038d896fdaa0d5ce47c8942331.png" width="110" />
+                        </div>
+                    </div>
+                    <div class='bucket-content'>
+                        <h3>
+                            <b>Level 1</b>
+                            Fork Based Workflows
+                            <span class='db di--m mls--m tcs tsxs twn'>4 Videos | 5 Challenges</span>
+                        </h3>
+                        <p class='mbf'>Tuning your Git config and better collaboration through forking.</p>
+                    </div>
+                </div>
+            </div>
+            <div class='card card--b mbm--m mbs' id='course-overview'>
+                <div class='bucket bucket--flag'>
+                    <div class='bucket-media dn db--m'>
+                        <div class='badge'>
+                            <img alt="Level 2 Complete" class="badge-img" height="110" src="https://d1ffx7ull4987f.cloudfront.net/images/achievements/large_badge/437/level-2-complete-b40482b7e42c396cc3174068da5756c0.png" width="110" />
+                        </div>
+                    </div>
+                    <div class='bucket-content'>
+                        <h3>
+                            <b>Level 2</b>
+                            Single Repository Workflows
+                            <span class='db di--m mls--m tcs tsxs twn'>3 Videos | 4 Challenges</span>
+                        </h3>
+                        <p class='mbf'>Best practices for collaborating in a single repository.</p>
+                    </div>
+                </div>
+            </div>
+            <div class='card card--b mbm--m mbs' id='course-overview'>
+                <div class='bucket bucket--flag'>
+                    <div class='bucket-media dn db--m'>
+                        <div class='badge'>
+                            <img alt="Level 3 Complete" class="badge-img" height="110" src="https://d1ffx7ull4987f.cloudfront.net/images/achievements/large_badge/438/level-3-complete-2e91885ce8abe78b704b040f113f33b5.png" width="110" />
+                        </div>
+                    </div>
+                    <div class='bucket-content'>
+                        <h3>
+                            <b>Level 3</b>
+                            Tags, Branches and Releases
+                            <span class='db di--m mls--m tcs tsxs twn'>3 Videos | 3 Challenges</span>
+                        </h3>
+                        <p class='mbf'>Tracking production releases using Git Tags, release branches, and GitHub Releases.</p>
+                    </div>
+                </div>
+            </div>
+            <div class='card card--b mbm--m mbs' id='course-overview'>
+                <div class='bucket bucket--flag'>
+                    <div class='bucket-media dn db--m'>
+                        <div class='badge'>
+                            <img alt="Level 4 Complete" class="badge-img" height="110" src="https://d1ffx7ull4987f.cloudfront.net/images/achievements/large_badge/439/level-4-complete-250e13c6047c9687d429a3a66b6f7d0c.png" width="110" />
+                        </div>
+                    </div>
+                    <div class='bucket-content'>
+                        <h3>
+                            <b>Level 4</b>
+                            Issues, Wiki's and GitHub Pages
+                            <span class='db di--m mls--m tcs tsxs twn'>3 Videos | 4 Challenges</span>
+                        </h3>
+                        <p class='mbf'>Using GitHub Issues, Wikis, and Pages to collaborate and communicate.</p>
+                    </div>
+                </div>
+            </div>
+            <div class='card card--b mbm--m mbs' id='course-overview'>
+                <div class='bucket bucket--flag'>
+                    <div class='bucket-media dn db--m'>
+                        <div class='badge'>
+                            <img alt="Level 5 Complete" class="badge-img" height="110" src="https://d1ffx7ull4987f.cloudfront.net/images/achievements/large_badge/440/level-5-complete-7b2f239561b3c051780631ba495fad0f.png" width="110" />
+                        </div>
+                    </div>
+                    <div class='bucket-content'>
+                        <h3>
+                            <b>Level 5</b>
+                            Managing and Securing GitHub
+                            <span class='db di--m mls--m tcs tsxs twn'>2 Videos | 11 Challenges</span>
+                        </h3>
+                        <p class='mbf'>Repo setup, tracking project progress and managing access to your repositories.</p>
+                    </div>
+                </div>
+            </div>
+            <div class='card card--b mbm--m mbs' id='course-overview'>
+                <div class='bucket bucket--flag'>
+                    <div class='bucket-media dn db--m'>
+                        <div class='badge'>
+                            <img alt="Level 6 Complete" class="badge-img" height="110" src="https://d1ffx7ull4987f.cloudfront.net/images/achievements/large_badge/441/level-6-complete-e3cb6152b751621ffc55acd957b82f22.png" width="110" />
+                        </div>
+                    </div>
+                    <div class='bucket-content'>
+                        <h3>
+                            <b>Level 6</b>
+                            Automating GitHub
+                            <span class='db di--m mls--m tcs tsxs twn'>2 Videos | 4 Challenges</span>
+                        </h3>
+                        <p class='mbf'>Integrating existing services, creating custom webhooks, and working with the GitHub API.</p>
+                    </div>
+                </div>
+            </div>
+            <div class='card card--b mbm--m mbs' id='course-overview'>
+                <div class='bucket bucket--flag'>
+                    <div class='bucket-media dn db--m'>
+                        <div class='badge'>
+                            <img alt="Level 7 Complete" class="badge-img" height="110" src="https://d1ffx7ull4987f.cloudfront.net/images/achievements/large_badge/442/level-7-complete-686a3a6059035ec12fe30864bb54dc56.png" width="110" />
+                        </div>
+                    </div>
+                    <div class='bucket-content'>
+                        <h3>
+                            <b>Level 7</b>
+                            Command Line GitHub
+                            <span class='db di--m mls--m tcs tsxs twn'>1 Video | 4 Challenges</span>
+                        </h3>
+                        <p class='mbf'>Using hub to create, fork, clone and collaborate on repositories - no browser needed!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='g-b g-b--l--2of5'>
+        <ul class='g g--condensed lr mbm'>
+            <li class='g-b g-b--1of2'>
+                <a href="#reviews" class="btn btn--b btn--block ellipsis js-scrollTo-reviews">14 Reviews</a>
+            </li>
+            <li class='g-b g-b--1of2'>
+                <a href="http://discuss.codeschool.com/" class="btn btn--b btn--block ellipsis">Discuss
+                    <span class='dn di--m'>This Course</span>
+                </a></li>
+        </ul>
+        <div class='card card--a has-card-section mbl'>
+            <div class='card-section'>
+                <h2 class='label'>Recommended Prerequisites</h2>
+                <div class='markdown tsm'>
+                    <ul>
+                        <li><a href="https://www.codeschool.com/courses/git-real">Git Real</a></li>
+                        <li><a href="https://www.codeschool.com/courses/git-real-2">Git Real 2</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class='card-section'>
+                <h2 class='mbf tcs tss ttu twb'>About The Professor</h2>
+                <div class='card-section'>
+                    <div class='bucket'>
+                        <div class='bucket-media dn db--m'>
+                            <img alt="Peter Bell" class="thumb thumb--m mbs mhc mhf--m" src="https://d1ffx7ull4987f.cloudfront.net/images/professors/avatar/60/60-a1a377b76253b74fe12f6b795b58d813.jpg" width="100" />
+                        </div>
+                        <div class='bucket-content'>
+                            <h3><a href="http://twitter.com/PeterBell" title="Follow Peter on Twitter">Peter Bell</a></h3>
+                            <p class='mbf tsm'>Peter is passionate about helping people build better software. He's a contract member of the GitHub training team, is writing books on Git and GitHub for Pearson and O’Reilly, and is the founder of Pragmatic Learning, Speak Geek and the Startup CTO Summit Series.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='card-section'>
+                <h2 class='mbm tcs tss ttu twb'>Teaching Assistants</h2>
+                <div id='teaching-assistants'>
+                    <ul class='g list'>
+                        <li class='g-b g-b--m--1of3'>
+                            <img alt="Gregg Pollack" class="thumb thumb--m mbxs mhc" src="https://d1ffx7ull4987f.cloudfront.net/images/professors/avatar_thumb/1/1-thumb-438f8484ab5c384bff76da7b87c0a691.jpeg" width="100" />
+                            <p class='tac tss'>
+                                <strong><a href="http://twitter.com/GreggPollack" target="blank">Gregg Pollack</a></strong>
+                            </p>
+                        </li>
+                        <li class='g-b g-b--m--1of3'>
+                            <img alt="Adam Fortuna" class="thumb thumb--m mbxs mhc" src="https://d1ffx7ull4987f.cloudfront.net/images/professors/avatar_thumb/10/10-thumb-e0c65f18d3afb255f19041b3e37731a3.png" width="100" />
+                            <p class='tac tss'>
+                                <strong><a href="http://twitter.com/adamfortuna" target="blank">Adam Fortuna</a></strong>
+                            </p>
+                        </li>
+                        <li class='g-b g-b--m--1of3'>
+                            <img alt="Russell Centanni" class="thumb thumb--m mbxs mhc" src="https://d1ffx7ull4987f.cloudfront.net/images/professors/avatar_thumb/94/94-thumb-fb41f9d4876bb10309dbda7fcc0363ac.jpeg" width="100" />
+                            <p class='tac tss'>
+                                <strong><a href="http://twitter.com/lizardruss" target="blank">Russell Centanni</a></strong>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <h3 class='label'>Course Notes</h3>
+        <ul class='list'>
+            <li class='list-item'><p>Mastering GitHub uses git version 2.x and has 116 minutes of videos.</p>
+            </li>
+            <li class='list-item'><p>Use of a GitHub account and a local terminal in which you can interact with Git are required to complete the challenges for this course.</p>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+<div class='row row--a' id='reviews'>
+    <div class='cell well'>
+        <h2 class='mbm mbl--m tcs tss ttu twb'>Course Reviews (14)</h2>
+        <div class='g collection collection--m--1of2 js-reviews'>
+            <div class='g-b g-b--m--1of2 collection-item'>
+                <div class='card card--b'>
+                    <div class='bucket'>
+                        <div class='bucket-media dn db--m'>
+                            <img alt="" class="thumb thumb--m" height="50" itemprop="image" src="https://secure.gravatar.com/avatar/a87cee058c6dae18ae17559d544ca6fa.jpg?s=50&r=pg&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F1c02274fedcce55a289172bfb8db25ab.jpg%3Fs%3D50%26r%3Dpg" width="50" />
+                        </div>
+                        <div class='bucket-content'>
+                            <h4 class='label mbs mbxs--m'>
+                                <a href="/users/IN3D"><strong>IN3D</strong>
+                                </a></h4>
+                            <p>This course really makes for a wonderful cap off the the whole git track of the electives. The challenges will have you using a lot of functionality that you learned about in previous courses. Mastering GitHub brought a lot of the concepts together for me, but I would highly recommend going though at least GitReal before this course.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='g-b g-b--m--1of2 collection-item'>
+                <div class='card card--b'>
+                    <div class='bucket'>
+                        <div class='bucket-media dn db--m'>
+                            <img alt="" class="thumb thumb--m" height="50" itemprop="image" src="https://secure.gravatar.com/avatar/791d507f147ef610fcc30e2c3c7665f3.jpg?s=50&r=pg&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F1c02274fedcce55a289172bfb8db25ab.jpg%3Fs%3D50%26r%3Dpg" width="50" />
+                        </div>
+                        <div class='bucket-content'>
+                            <h4 class='label mbs mbxs--m'>
+                                <a href="/users/emergia"><strong>emergia</strong>
+                                </a></h4>
+                            <p>We are working daily with GitHub using the feature branch workflow, but this course open our eyes to so many cool things that can be done or improved in our workflow.
+                                Better use of tags, wikis, interactive rebasing when we have dumb commits...
+
+                                The permissions and access chapter has been very useful to clarify us how to work with external services or granting GitHub access to our scripts without having to fight with ssh keys.
+
+                                Hub chapter is amazing. I can't believe we haven't been using it.
+
+                                Peter is a great teacher. He speaks in a very clear way to non english students like us, and you see that he enjoy's teaching.
+
+                                I have done many courses here. Ad Mastering Github is my favorite! Good job!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='g-b g-b--m--1of2 collection-item'>
+                <div class='card card--b'>
+                    <div class='bucket'>
+                        <div class='bucket-media dn db--m'>
+                            <img alt="" class="thumb thumb--m" height="50" itemprop="image" src="https://secure.gravatar.com/avatar/650c7193364671981967d524ba8d6b9c.jpg?s=50&r=pg&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F1c02274fedcce55a289172bfb8db25ab.jpg%3Fs%3D50%26r%3Dpg" width="50" />
+                        </div>
+                        <div class='bucket-content'>
+                            <h4 class='label mbs mbxs--m'>
+                                <a href="/users/863397"><strong>glorat</strong>
+                                </a></h4>
+                            <p>To actually use github for real to learn github is total genius. The instructions are clear and the complex topics are made easy to absorb as a result of the real hands on learning.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='g-b g-b--m--1of2 collection-item'>
+                <div class='card card--b'>
+                    <div class='bucket'>
+                        <div class='bucket-media dn db--m'>
+                            <img alt="" class="thumb thumb--m" height="50" itemprop="image" src="https://secure.gravatar.com/avatar/0db7e689e229126cba3629b094331bf4.jpg?s=50&r=pg&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F1c02274fedcce55a289172bfb8db25ab.jpg%3Fs%3D50%26r%3Dpg" width="50" />
+                        </div>
+                        <div class='bucket-content'>
+                            <h4 class='label mbs mbxs--m'>
+                                <a href="/users/Glutnix"><strong>Glutnix</strong>
+                                </a></h4>
+                            <p>Clearly understanding forking and syncing upstream repos was amazing. The extra workflow stuff was very helpful too. Learning how to use CLI 'hub' could be a winner too!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class='mbm mbl--m tac'>
+            <a href="https://www.codeschool.com/courses/mastering-github/reviews" class="btn btn--b btn--wide js-reviews-toggle">Show More</a>
+        </div>
+    </div>
+</div>
+<form class='modal fade' id='create-account' method='post'>
+    <div class='modal-dialog'>
+        <div class='modal-content'>
+            <div class='modal-header'>
+                <h3>Enter your Email</h3>
+                <p class='mbf'>We'll remind you when <span class='js-remindMe-courseTitle'>the course</span> is released.</p>
+                <a href="#" class="modal-close close" data-dismiss="modal"><b class='srt'>Close</b>
+                </a></div>
+            <div class='modal-body'>
+                <fieldset class='form-field'>
+                    <label class='form-label' for='email'>Email</label>
+                    <input class='form-input' id='email' name='email' required type='email'>
+                </fieldset>
+                <p class='card card--c mbf tac'>We will only email you once this course is released.</p>
+            </div>
+            <div class='modal-footer'>
+                <input class='form-btn btn' data-disable-with='Creating Reminder...' type='submit' value='Remind Me'>
+            </div>
+        </div>
+    </div>
+</form>
+
+</main>
+<footer class='footer'>
+    <div class='row'>
+        <div class='cell well'>
+            <div class='g'>
+                <div class='g-b g-b--m--1of2 g-b--l--2of5'>
+                    <div class='g'>
+                        <div class='g-b g-b--s--1of2'>
+                            <ul class='footer-list list mbl'>
+                                <li class='list-item'><a href="https://www.codeschool.com/users/sign_up" class="footer-list-link list-item-link twb">Create Free Account</a></li>
+                                <li class='list-item'><a href="https://www.codeschool.com/courses" class="footer-list-link list-item-link">View Courses</a></li>
+                                <li class='list-item'><a href="https://www.codeschool.com/courses/suggest" class="footer-list-link list-item-link">Suggest Course</a></li>
+                                <li class='list-item'><a href="https://www.codeschool.com/suggest/features" class="footer-list-link list-item-link">Suggest Feature</a></li>
+                                <li class='list-item'><a href="http://discuss.codeschool.com" class="footer-list-link list-item-link">Discuss</a></li>
+                                <li class='list-item'><a href="/support" class="footer-list-link list-item-link">Support</a></li>
+                                <li class='list-item'><a href="https://codeschool.getambassador.com/" class="footer-list-link list-item-link">Ambassador Program</a></li>
+                            </ul>
+                        </div>
+                        <div class='g-b g-b--s--1of2'>
+                            <ul class='footer-list list mbl'>
+                                <li class='list-item'><a href="https://www.codeschool.com/contact" class="footer-list-link list-item-link twb">Contact Code School</a></li>
+                                <li class='list-item'><a href="https://www.codeschool.com/about" class="footer-list-link list-item-link">About</a></li>
+                                <li class='list-item'><a href="http://www.codeschool.com/blog" class="footer-list-link list-item-link">Blog</a></li>
+                                <li class='list-item'><a href="https://www.codeschool.com/jobs" class="footer-list-link list-item-link">Jobs</a></li>
+                                <li class='list-item'><a href="http://shop.codeschool.com/" class="footer-list-link list-item-link">Shop</a></li>
+                                <li class='list-item'><a href="https://www.codeschool.com/terms_of_use" class="footer-list-link list-item-link">Terms of Use</a></li>
+                                <li class='list-item'><a href="https://www.codeschool.com/privacy_policy" class="footer-list-link list-item-link">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class='g-b g-b--m--1of2 g-b--l--3of5'>
+                    <div class='footer-about'>
+                        <img alt="Code School" class="db mbm" src="https://d1tijy5l7mg5kk.cloudfront.net/assets/logo-footer-a7325db3482bd10804609250e1d6315c.svg" />
+                        <p class='tsm'>
+                            <strong>Code School</strong> teaches web technologies in the
+                            comfort of your browser with video lessons, coding challenges,
+                            and screencasts. We strive to help you learn by doing.
+                        </p>
+                        <a href="https://www.codeschool.com/about" class="mbm tsm">Learn More</a>
+                        <ul class='list iconList'>
+                            <li class='iconList-item iconList-item--label'>Follow us on:</li>
+                            <li class='iconList-item'>
+                                <a href="https://twitter.com/codeschool" class="iconList-item-link footer-list-link"><b class='srt'>Twitter</b>
+                                    <i class='icn icn--twitter iconList-item-icn'></i>
+                                </a></li>
+                            <li class='iconList-item'>
+                                <a href="https://www.facebook.com/CodeSchool" class="iconList-item-link footer-list-link"><b class='srt'>Facebook</b>
+                                    <i class='icn icn--facebook iconList-item-icn'></i>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class='footer-copyright'>&copy; 2014 Code School LLC - Crafted in Orlando.</p>
+    </div>
+</footer>
+
+
+</body>
