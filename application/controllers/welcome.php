@@ -23,7 +23,7 @@ class Welcome extends CI_Controller {
 		$data["talks"] = $this->talks->get_all_talks();
 
 		//get_all_talks
-		$this->load->view('welcome_message', $data);
+		$this->load->view('home', $data);
 	}
 }
 
