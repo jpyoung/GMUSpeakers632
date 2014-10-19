@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Home extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -24,6 +24,14 @@ class Welcome extends CI_Controller {
 
 		//get_all_talks
 		$this->load->view('home', $data);
+	}
+
+	function goto_about() {
+		$this->load->view('about');
+	}
+
+	function goto_SignIn() {
+		$this->load->view('signIn');
 	}
 }
 

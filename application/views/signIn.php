@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <link href="BaseStyle.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>assets/BaseStyle.css" media="screen" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -25,7 +25,7 @@
 
                 <div class="bdrb mbm mtm mtl--m pbm tac">
                     <input class="form-btn btn mbm" data-disable-with="Creating…" name="commit" type="submit" value="Login">
-                    <a href="index.html" style="padding: 0px;" class="form-btn btn mbm">Back</a>
+                    <a href="<?php echo base_url(); ?>index.php/home/" style="padding: 0px;" class="form-btn btn mbm">Back</a>
                 </div>
 
 
