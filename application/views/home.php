@@ -4,7 +4,11 @@
 
     <title>Jack Young Index3</title>
 
-    <link href="BaseStyle.css" media="screen" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+        var baseurl = "<?php echo base_url(); ?>";
+    </script>
+
+    <link href="<?php echo base_url(); ?>assets/BaseStyle.css" media="screen" rel="stylesheet" type="text/css">
     <style>
 
 
@@ -110,7 +114,7 @@
                             <strong style="font-size: x-large;">1<sup>st</sup></strong>
                         </div>
                         <div class="badge mbm mhc">
-                            <img class="badge-img" height="110" src="images/jeff_offutt.gif" width="110">
+                            <img class="badge-img" height="110" src="<?php echo base_url(); ?>assets/images/jeff_offutt.gif" width="110">
                         </div>
                         <h3 class="pathSelect-title"><a href="/paths/ruby" class="pathSelect-title-link pathSelect-title-link--ruby">Jeff Offutt</a></h3>
                         <p class="tsm js-pathDescription">Dr. Jeff Offutt is Professor of Software Engineering at George Mason University.</p>
@@ -123,7 +127,7 @@
                             <strong style="font-size: x-large;">2<sup>nd</sup></strong>
                         </div>
                         <div class="badge mbm mhc">
-                            <img class="badge-img" height="110" src="images/Don_Boileau.gif" width="110">
+                            <img class="badge-img" height="110" src="<?php echo base_url(); ?>assets/images/Don_Boileau.gif" width="110">
                         </div>
                         <h3 class="pathSelect-title"><a href="/paths/javascript" class="pathSelect-title-link pathSelect-title-link--javascript">Don Boileau</a></h3>
                         <p class="tsm js-pathDescription">Dr. Don Boileau is a Professor of Communication at George Mason University. </p>
@@ -136,7 +140,7 @@
                             <strong style="font-size: x-large;">3<sup>rd</sup></strong>
                         </div>
                         <div class="badge mbm mhc">
-                            <img class="badge-img" height="110" src="images/Karen_Bune.gif" width="110">
+                            <img class="badge-img" height="110" src="<?php echo base_url(); ?>assets/images/Karen_Bune.gif" width="110">
                         </div>
                         <h3 class="pathSelect-title"><a href="/paths/html-css" class="pathSelect-title-link pathSelect-title-link--html-css">Karen Bune</a></h3>
                         <p class="tsm js-pathDescription">Ms. Karen Bune is an adjunct professor at George Mason University where she teaches victimology in the criminal justice department.</p>
@@ -149,7 +153,7 @@
                             <strong style="font-size: x-large;">4<sup>th</sup></strong>
                         </div>
                         <div class="badge mbm mhc">
-                            <img class="badge-img" height="110" src="images/Maurice_McTigue.gif" width="110">
+                            <img class="badge-img" height="110" src="<?php echo base_url(); ?>assets/images/Maurice_McTigue.gif" width="110">
                         </div>
                         <h3 class="pathSelect-title"><a href="/paths/ios" class="pathSelect-title-link pathSelect-title-link--ios">Maurice McTigue</a></h3>
                         <p class="tsm js-pathDescription">Mr. Maurice McTigue joined the George Mason University Mercatus Center as a Distinguished Visiting Scholar after a career as a New Zealand member of Parliament, Cabinet Minister and Ambassador.</p>

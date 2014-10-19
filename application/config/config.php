@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://jacks-imac.local/GMU_Speakers_632/';
+$config['base_url']	= 'http://jacks-imac.local/GMUSpeakers632/';
 //$config['base_url']	= 'http://jack-young.com/SWE632/Project/GMU_Speakers_632/';
 
 /*
