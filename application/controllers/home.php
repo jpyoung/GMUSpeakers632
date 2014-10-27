@@ -34,6 +34,8 @@ class Home extends CI_Controller {
 		$this->load->view('signIn');
 	}
 
+	
+	// Find a lecture button on the home page
 	function goto_speakerListing() {
 		$this->load->model("talks");
 		$data["talks"] = $this->talks->all_lecture_listing();
@@ -42,6 +44,21 @@ class Home extends CI_Controller {
 
 		$this->load->view('speakerListing', $data);
 	}
+
+
+	function goto_detail_lecture_view() {
+		// id of the selected talk on the lecture listing page
+		$tid = $_GET['tid'];
+		$data["talk"] = $tid;
+
+		$this->load->view('LectureDetailView', $data);
+	}
+
+
+
+
+
+
 }
 
 /* End of file welcome.php */

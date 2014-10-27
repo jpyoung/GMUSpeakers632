@@ -1,43 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-    <title>GSB - Admin Edit Homepage</title>
-
-    <link href="BaseStyle.css" media="screen" rel="stylesheet" type="text/css">
-
-
-</head>
-
-
-<body class=' courses courses-index '>
-<div class='dn db--m'>
-
-</div>
-<ul class='js-notes has-note'></ul>
-
-<header class="header row has-dropdown ovh ovv--m">
-    <div class="cell">
-        <div class="g">
-            <div class="g-b g-b--m--1of4">
-                <div class="header-item header-item--brand brand fl">
-                </div>
-            </div>
-            <div class="g-b g-b--m--3of4">
-                <nav class="header-item nav" id="site-navigation">
-                    <a href="#" class="nav-menu fr"><div class="nav-box"></div>
-                        <div class="nav-menu-stack">
-                            <b class="srt">Menu</b>
-                        </div>
-                    </a><ol class="nav-list list fr">
-                    <li class="nav-item list-item"><a href="index.html" class="nav-item-link list-item-link">Sign out</a></li>
-                </ol>
-                </nav>
-
-            </div>
-        </div>
-    </div>
-</header>
+<!-- start: vertNavBar section -->
+<?php include('common/header.php'); ?>
+<!-- end: vertNavBar section -->
 
 
 
@@ -112,32 +75,6 @@
 
 
 
-<footer id="bottomFooter" class="footer">
-    <div class="row">
-        <div class="cell well">
-            <div class="g">
-                <div class="g-b g-b--m--1of2 g-b--l--2of5">
-                    <div class="g">
-                        <div class="g-b g-b--s--1of2">
-                            <ul class="footer-list list mbl">
-                                <li class="list-item"><a href="about.html" class="footer-list-link list-item-link twb">About / References</a></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="g-b g-b--m--1of2 g-b--l--3of5">
-                    <div class="footer-about">
-                        <h1>George Mason University</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</footer>
-
-
-
-</body>
-</html>
+<!-- start: vertNavBar section -->
+<?php include('../common/footer.php'); ?>
+<!-- end: vertNavBar section -->
