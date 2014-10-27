@@ -34,7 +34,7 @@
                             <b class="srt">Menu</b>
                         </div>
                     </a><ol class="nav-list list fr">
-                    <li class="nav-item list-item"><a id="signinlink" href="<?php echo base_url(); ?>index.php/home/goto_SignIn" class="nav-item-link list-item-link">Sign in</a></li>
+                    <li class="nav-item list-item"><a href="<?php echo base_url(); ?>" class="nav-item-link list-item-link">Sign Out</a></li>
                 </ol>
                 </nav>
 

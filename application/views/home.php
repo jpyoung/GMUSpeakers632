@@ -98,3 +98,4 @@
 <!-- start: vertNavBar section -->
 <?php include('common/footer.php'); ?>
 <!-- end: vertNavBar section -->
+

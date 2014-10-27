@@ -32,6 +32,10 @@ class Login extends CI_Controller {
 		$username = $_POST['l_username'];
 		$password = $_POST['l_password'];
 
+
+		echo "Method was called " . $username;
+
+
 		if ( $username == '' || $password == '' ) {
 			//username or password should not be blank.
 			$data = '';
@@ -43,9 +47,8 @@ class Login extends CI_Controller {
 			if ( $user ) {
 				//found a matching user
 				$us_data = array (
-						'user_type' => '1',
+						'user_type' => $user->user_type,
 						'user_id' => $user->u_id,
-						'user_id' => $user->userid,
 						'username' => $username,
 						'password' => $password,
 						'logged_in' => TRUE
@@ -73,14 +76,14 @@ class Login extends CI_Controller {
 	// }
 
 
-	// /**
-	// * This function is called when the user pressed the log out on the top nav bar. 
-	// *
-	// */
-	// function logout() {
-	// 	$this->session->sess_destroy();
-	// 	$this->index();
-	// }
+	/**
+	* This function is called when the user pressed the log out on the top nav bar. 
+	*
+	*/
+	function logout() {
+		$this->session->sess_destroy();
+		$this->index();
+	}
 	
 }
 

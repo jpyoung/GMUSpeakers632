@@ -13,14 +13,14 @@
             <h1>Sign In</h1>
         </div>
         <div class="form form--session" id="sign-up-form">
-            <form accept-charset="UTF-8" action="" method="post">
+            <form accept-charset="UTF-8" action="<?php echo base_url();?>index.php/login/login_verification" method="post">
 
                 <fieldset class="form-field">
-                    <label class="form-label" for="user_username">Username</label><input class="form-input" id="registration_username" name="user[username]" size="30" type="text" autofocus>
+                    <label class="form-label">Username</label><input class="form-input" id="registration_username" name="l_username" size="30" type="text" autofocus>
                 </fieldset>
 
                 <fieldset class="form-field">
-                    <label class="form-label" data-required="true" for="user_password">Password</label><input class="form-input mbxs js-showPassword-input" id="registration_password" name="user[password]" size="30" type="password">
+                    <label class="form-label" data-required="true">Password</label><input class="form-input mbxs js-showPassword-input" id="registration_password" name="l_password" size="30" type="password">
                 </fieldset>
 
                 <div class="bdrb mbm mtm mtl--m pbm tac">

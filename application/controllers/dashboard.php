@@ -16,7 +16,9 @@ class Dashboard extends CI_Controller {
 
 	public function index() {
 		if ( $this->session->userdata('user_type') == 1 ) {
-			$this->dashboard_page();
+			$this->admin_page();
+		} else if ($this->session->userdata('user_type') == 2) {
+			$this->speaker_page();
 		} else {
 			redirect('login');
 		}
@@ -27,7 +29,7 @@ class Dashboard extends CI_Controller {
 	* This is the main dashboard page function.  It is called when the dashboard
 	* view is loaded/refreshed.    
 	*/
-	function dashboard_page() {
+	function admin_page() {
 		$this->auth->check_session();
 
 		// $data['title'] = "eFAV Dashboard";
@@ -48,7 +50,12 @@ class Dashboard extends CI_Controller {
 		// $this->load->model('ua_selection_log_model');
 		// $data['usersTopFiveAircraft'] = $this->ua_selection_log_model->find_users_top_five_aircrafts(11);
 		
-		$this->load->view('dashboard_view', $data);
+		$this->load->view('admin/adminEditIndex');
+	}
+
+	function speaker_page() {
+		$this->auth->check_session();
+		$this->load->view('speakerUpdateStuff');
 	}
 	
 

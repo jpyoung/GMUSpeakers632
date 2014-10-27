@@ -130,5 +130,5 @@
 
 
 <!-- start: vertNavBar section -->
-<?php include('../common/footer.php'); ?>
+<?php include('common/footer.php'); ?>
 <!-- end: vertNavBar section -->
