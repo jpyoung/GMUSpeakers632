@@ -50,12 +50,12 @@ class Dashboard extends CI_Controller {
 		// $this->load->model('ua_selection_log_model');
 		// $data['usersTopFiveAircraft'] = $this->ua_selection_log_model->find_users_top_five_aircrafts(11);
 		
-		$this->load->view('admin/adminEditIndex');
+		$this->load->view('backend/adminEditIndex');
 	}
 
 	function speaker_page() {
 		$this->auth->check_session();
-		$this->load->view('speakerUpdateStuff');
+		$this->load->view('backend/speakerUpdateStuff');
 	}
 	
 
