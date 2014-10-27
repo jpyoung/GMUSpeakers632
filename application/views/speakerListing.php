@@ -111,6 +111,57 @@
 
 
 
+
+
+
+
+
+
+ <?php foreach($talks as $row): ?>
+    <div class='g-b g-b--l--1of2'>
+        <article class='card card--a course' id='course_113' itemscope='' itemtype='http://schema.org/Product'>
+            <div class='course-badge badge'>
+                <a href="/courses/javascript-best-practices"><img  class="badge-img" height="110" itemprop="image" src="<?php print_r($row['userinfo']->image_url); ?>" width="110" />
+                </a></div>
+            <div class='course-content'>
+                <div class='mbxs mbf--m'>
+                    <span class='label'>Lecture</span>
+                    <div class='di dn--m'>
+                        <a href="/paths/javascript" class="tag tag--header tag--javascript">JavaScript</a>
+                    </div>
+                </div>
+                <h2 class='course-title'>
+                    <a href="/courses/javascript-best-practices" class="course-title-link"><?php print_r($row['talks']->title); ?></a>
+                    <div class='dn di--m'>
+                        <?php $cat = $row['userinfo']->category;
+                            if ($cat == 1) {
+                                // tech talk
+                                echo '<a href="/paths/javascript" class="tag tag--header tag--javascript">Tech Talk</a>';
+                            } else if ($cat == 2) {
+                                //science
+                                echo '<a href="#" class="tag tag--header tag--ios">Science</a>';
+                            } else if ($cat == 3) {
+                                //business
+                                echo '<a href="/paths/html-css" class="tag tag--header tag--html-css">Business</a>';
+                            } else {
+                                //other
+                                echo '<a href="/paths/git" class="tag tag--header tag--ruby">Other</a>';
+                            }
+                        ?>
+                        
+                    </div>
+                </h2>
+                <?php $temp = explode('.', $row['talks']->description); ?>
+                <p class='course-tagline' style="max-height: 42px; overflow: hidden;" itemprop='description'><?php echo $temp[0]; ?></p>
+                <?php $temp = 0; ?>
+            </div>
+        </article>
+
+    </div>
+ <?php endforeach; ?>
+
+ 
+
 </div>
 
 
