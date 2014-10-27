@@ -11,6 +11,27 @@ class Talks extends CI_Model {
 		}
 		return false;
 	}
+
+	function find_user_picture($uid) {
+		$this->db->where('u_id', $uid);
+		$query = $this->db->get('user');
+		if ( $query->num_rows ) {
+			return $query->row();
+		}
+		return false;
+	}
+
+	function all_lecture_listing() {
+		$over = array();
+		$totalR = array();
+		$totalR['talks'] = $this->get_all_talks();
+		// $totalR['name'] = "Jack";
+		for ($x = 0; $x < count($totalR['talks']); $x++) {
+			$over[$x] = array('talks' => $totalR['talks'][$x], 'userinfo' => $this->find_user_picture($totalR['talks'][$x]->u_id));
+		}
+		return $over;
+
+	}
 	
 	//when a user logs in, this method is called to update the stats_tracker table.
 	//the username and timestamp are entered into this table.

@@ -33,6 +33,15 @@ class Home extends CI_Controller {
 	function goto_SignIn() {
 		$this->load->view('signIn');
 	}
+
+	function goto_speakerListing() {
+		$this->load->model("talks");
+		$data["talks"] = $this->talks->all_lecture_listing();
+
+
+
+		$this->load->view('speakerListing', $data);
+	}
 }
 
 /* End of file welcome.php */

@@ -1,44 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!-- start: vertNavBar section -->
+<?php include('common/header.php'); ?>
+<!-- end: vertNavBar section -->
 
-    <title>GSB - Lecture Listing</title>
-
-    <link href="BaseStyle.css" media="screen" rel="stylesheet" type="text/css">
-
-
-</head>
-
-
-<body class=' courses courses-index '>
-<div class='dn db--m'>
-
-</div>
-<ul class='js-notes has-note'></ul>
-
-<header class="header row has-dropdown ovh ovv--m">
-    <div class="cell">
-        <div class="g">
-            <div class="g-b g-b--m--1of4">
-                <div class="header-item header-item--brand brand fl">
-                </div>
-            </div>
-            <div class="g-b g-b--m--3of4">
-                <nav class="header-item nav" id="site-navigation">
-                    <a href="#" class="nav-menu fr"><div class="nav-box"></div>
-                        <div class="nav-menu-stack">
-                            <b class="srt">Menu</b>
-                        </div>
-                    </a><ol class="nav-list list fr">
-                    <li class="nav-item list-item"><a href="SignIn.html" class="nav-item-link list-item-link">Sign in</a></li>
-                </ol>
-                </nav>
-
-            </div>
-        </div>
-    </div>
-</header>
-
+<?php print_r($talks); ?>
 
 <main class='content'><div class='row'>
 <div class='cell well'>

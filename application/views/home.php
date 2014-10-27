@@ -23,7 +23,7 @@
                     Mason Speakers comprises over 100 professors, researchers, administrators and alumni volunteers from George Mason University who provide lectures and guest presentations to organizations and businesses free of charge.
                 </p>
                 <div class="mbl tac tal--m">
-                    <a href="speakerListing.html" class="btn btn--wide bc-cadet-dark mbs mbf--l">Find a Lecture</a>
+                    <a href="<?php echo base_url(); ?>index.php/home/goto_speakerListing" class="btn btn--wide bc-cadet-dark mbs mbf--l">Find a Lecture</a>
 
                 </div>
 
