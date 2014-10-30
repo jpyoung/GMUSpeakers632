@@ -23,7 +23,6 @@ class Login extends CI_Controller {
 	function login_view($warn=NULL, $message=NULL) {
 		$data['warn'] = $warn;
 		$data['message'] = $message;
-		echo "The message is : " . $message;
 		$this->load->view('signIn', $data);
 	}
 
