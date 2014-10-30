@@ -21,6 +21,8 @@ class Home extends CI_Controller {
 	{
 		$this->load->model("talks");
 		$data["talks"] = $this->talks->get_all_talks();
+		$this->load->model("dashboard_prefs");
+		$data["prefs"] = $this->dashboard_prefs->get_dashboard_prefs();
 
 		//get_all_talks
 		$this->load->view('home', $data);
