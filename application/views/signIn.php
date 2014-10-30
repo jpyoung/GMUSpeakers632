@@ -23,7 +23,7 @@
             <form accept-charset="UTF-8" action="<?php echo base_url();?>index.php/login/login_verification" method="post">
 
                 <fieldset class="form-field">
-                    <label class="form-label">Username</label><input class="form-input" id="registration_username" name="l_username" size="30" type="text" autofocus>
+                    <label class="form-label">Username</label><input class="form-input" id="registration_username" name="l_username" size="30" type="text" value="<?php if (isset($message)) { if ($message != NULL) { echo $message; }}?>"autofocus>
                 </fieldset>
 
                 <fieldset class="form-field">

@@ -23,6 +23,7 @@ class Login extends CI_Controller {
 	function login_view($warn=NULL, $message=NULL) {
 		$data['warn'] = $warn;
 		$data['message'] = $message;
+		echo "The message is : " . $message;
 		$this->load->view('signIn', $data);
 	}
 
@@ -54,7 +55,8 @@ class Login extends CI_Controller {
 				//Could not find any matching username or password
 				$data = '';
 				$warn = 'Invalid Username or Password';
-				$this->index($warn, $data);
+				$message = $username;
+				$this->index($warn, $message);
 			}
 		}
 	}
