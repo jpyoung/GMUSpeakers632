@@ -12,6 +12,13 @@
         <div class="mbm mbl--m tac">
             <h1>Sign In</h1>
         </div>
+        <?php if (isset($warn)): ?>
+        <div class="tac">
+            <div style="background-color: yellow; margin-right: 75px; margin-left: 75px; padding: 1px 1px 1px 1px;">
+                <?php echo $warn; ?>
+            </div>
+        </div>
+        <?php endIf; ?>
         <div class="form form--session" id="sign-up-form">
             <form accept-charset="UTF-8" action="<?php echo base_url();?>index.php/login/login_verification" method="post">
 

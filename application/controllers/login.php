@@ -23,18 +23,13 @@ class Login extends CI_Controller {
 	function login_view($warn=NULL, $message=NULL) {
 		$data['warn'] = $warn;
 		$data['message'] = $message;
-		$data['title'] = "Login - eFAV";
-		$this->load->view('login_view', $data);
+		$this->load->view('signIn', $data);
 	}
 
 
 	function login_verification() {
 		$username = $_POST['l_username'];
 		$password = $_POST['l_password'];
-
-
-		echo "Method was called " . $username;
-
 
 		if ( $username == '' || $password == '' ) {
 			//username or password should not be blank.
