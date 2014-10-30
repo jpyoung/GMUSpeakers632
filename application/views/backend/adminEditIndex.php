@@ -7,7 +7,7 @@
 <?php include('common/nav.php'); ?>
 <!-- end: vertNavBar section -->
 
-
+<?php print_r($prefs); ?>
 
 
 <main class='content'><div class='row'>
@@ -23,23 +23,23 @@
 
 
             <div id="newSpeakerFormArea">
-                <form accept-charset="UTF-8" action="/users?analytics%5BSign+Up+Page%5D=%2Fusers%2Fsign_up" method="post">
+                <form accept-charset="UTF-8" action="<?php echo base_url();?>index.php/admin/ehp_form_action" method="post">
 
                     <fieldset class="form-field">
-                        <label class="form-label" for="user_username">Youtube Video URL</label>
-                        <input class="form-input" id="registration_username" name="user[username]" size="30" type="text" autofocus value="http://i.ytimg.com/vi/ZYnk2AW616w/sddefault.jpg">
+                        <label class="form-label">Youtube Video URL</label>
+                        <input class="form-input" id="youtube_url" name="youtube_url" size="30" type="text" autofocus value="<?php echo $prefs[0]->video_url; ?>">
                     </fieldset>
 
                     <fieldset class="form-field">
-                        <label class="form-label" data-required="true" for="user_password">Homepage Center Content</label>
-                        <textarea class="form-input mbxs js-showPassword-input">Mason Speakers comprises over 100 professors, researchers, administrators and alumni volunteers from George Mason University who provide lectures and guest presentations to organizations and businesses free of charge.
+                        <label class="form-label" data-required="true">Homepage Center Content</label>
+                        <textarea id="center_content" name="center_content" class="form-input mbxs js-showPassword-input"><?php echo $prefs[0]->center_content; ?>
                         </textarea>
                     </fieldset>
 
 
                     <div class="bdrb mbm mtm mtl--m pbm tac">
-                        <input class="form-btn btn mbm" name="commit" type="submit" value="Update">
-                        <input class="form-btn btn mbm" name="commit" type="submit" value="Cancel">
+                        <input class="form-btn btn mbm" name="commit_ehp" type="submit" value="Update">
+                        <input class="form-btn btn mbm" name="commit_ehp" type="submit" value="Reset to Default">
                     </div>
 
                 </form>

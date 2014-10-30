@@ -31,25 +31,10 @@ class Dashboard extends CI_Controller {
 	*/
 	function admin_page() {
 		$this->auth->check_session();
-
-		// $data['title'] = "eFAV Dashboard";
-		
-		// $data['aircrafts'] = $this->get_all_aircraft();
-		// $data['all_manufacturers'] = $this->get_all_manufacturers();
-
-		// //Base Value Current Market Price Table stuff
-		// $this->load->model('bv_cmp_model');
-		// $data['bv_figures'] = $this->bv_cmp_model->collect_data_controller(6);
-		
-		// $this->load->model('aircraft_stats_model');
-		// $data['ac_statistics'] = $this->aircraft_stats_model->gather_all(6);
-
-		// $this->load->model('adjusted_bv_cmp_model');
-		// $data['adjusted_bv_cmp_figures'] = $this->adjusted_bv_cmp_model->get_default_form_data_abccmp(6);
-
-		// $this->load->model('ua_selection_log_model');
-		// $data['usersTopFiveAircraft'] = $this->ua_selection_log_model->find_users_top_five_aircrafts(11);
 		$data['nav_selection'] = 1;
+		$this->load->model("dashboard_prefs");
+		$data["prefs"] = $this->dashboard_prefs->get_dashboard_prefs();
+
 		$this->load->view('backend/adminEditIndex', $data);
 	}
 

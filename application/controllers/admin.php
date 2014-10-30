@@ -16,13 +16,14 @@ class Admin extends CI_Controller {
 
 	public function index() {
 		$this->auth->check_session();
-		$data['nav_selection'] = 1;
-
-		$this->load->view('backend/adminEditIndex');
+		
+		$this->goto_edit_home_page();
 	}
 
 	function goto_edit_home_page() {
 		$data['nav_selection'] = 1;
+		$this->load->model("dashboard_prefs");
+		$data["prefs"] = $this->dashboard_prefs->get_dashboard_prefs();
 
 		$this->load->view('backend/adminEditIndex', $data);
 	}
@@ -48,6 +49,32 @@ class Admin extends CI_Controller {
 		$this->load->view('backend/adminTalksEdits', $data);
 	}
 
+
+
+
+	//Edit Home Page
+	function ehp_form_action() {
+		$url = $_POST['youtube_url'];
+		$content = $_POST['center_content'];
+		$action = $_POST['commit_ehp'];
+		$this->load->model("dashboard_prefs");
+
+		if ($action == "Update") {
+			$response = $this->dashboard_prefs->update_dashboard_prefs($url, $content);
+			if ($response) {
+				$this->goto_edit_home_page();
+			}
+		}
+		if ($action == "Reset to Default") {
+			//resetting the youtube video and the center content to the original
+			//stuff.
+			$response = $this->dashboard_prefs->reset_to_default();
+			if ($response) {
+				$this->goto_edit_home_page();
+			}
+		}
+
+	}
 
 	// /**
 	// * This is the main dashboard page function.  It is called when the dashboard
