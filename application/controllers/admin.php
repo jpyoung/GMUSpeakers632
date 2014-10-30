@@ -16,25 +16,36 @@ class Admin extends CI_Controller {
 
 	public function index() {
 		$this->auth->check_session();
+		$data['nav_selection'] = 1;
 
 		$this->load->view('backend/adminEditIndex');
 	}
 
 	function goto_edit_home_page() {
+		$data['nav_selection'] = 1;
 
-		$this->load->view('backend/adminEditIndex');
+		$this->load->view('backend/adminEditIndex', $data);
 	}
 
 	function goto_add_speaker_page() {
-		$this->load->view('backend/adminAddUser');
+		$nid = $_GET['nid'];
+		$data['nav_selection'] = $nid;
+
+		$this->load->view('backend/adminAddUser', $data);
 	}
 
 	function goto_delete_speakers_page() {
-		$this->load->view('backend/adminDeleteSpeaker');
+		$nid = $_GET['nid'];
+		$data['nav_selection'] = $nid;
+
+		$this->load->view('backend/adminDeleteSpeaker', $data);
 	}
 
 	function goto_delete_lectures_page() {
-		$this->load->view('backend/adminTalksEdits');
+		$nid = $_GET['nid'];
+		$data['nav_selection'] = $nid;
+
+		$this->load->view('backend/adminTalksEdits', $data);
 	}
 
 

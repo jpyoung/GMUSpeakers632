@@ -49,8 +49,8 @@ class Dashboard extends CI_Controller {
 
 		// $this->load->model('ua_selection_log_model');
 		// $data['usersTopFiveAircraft'] = $this->ua_selection_log_model->find_users_top_five_aircrafts(11);
-		
-		$this->load->view('backend/adminEditIndex');
+		$data['nav_selection'] = 1;
+		$this->load->view('backend/adminEditIndex', $data);
 	}
 
 	function speaker_page() {
