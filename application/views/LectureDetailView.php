@@ -93,7 +93,7 @@
 
             <div class="row row--a" id="reviews">
                 <div class="cell well">
-                    <h2 class="mbm mbl--m tcs tss ttu twb">Lecture Reviews (2)</h2>
+                    <h2 class="mbm mbl--m tcs tss ttu twb">Talk Reviews (2)</h2>
                     <div class="g collection collection--m--1of2 js-reviews">
 
                         <div class="g-b g-b--m--1of2 collection-item">

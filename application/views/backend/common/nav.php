@@ -12,7 +12,7 @@
                     <a href="<?php echo base_url(); ?>index.php/admin/goto_delete_speakers_page?nid=3" class="nav-item-link list-item-link">Delete Speakers</a>
                 </li>
                 <li class="<?php echo (($nav_selection == 4) ? "is-active list-item nav-item" : "nav-item list-item"); ?>">
-                    <a href="<?php echo base_url(); ?>index.php/admin/goto_delete_lectures_page?nid=4" class="nav-item-link list-item-link">Delete Lectures</a>
+                    <a href="<?php echo base_url(); ?>index.php/admin/goto_delete_lectures_page?nid=4" class="nav-item-link list-item-link">Delete Talks</a>
                 </li>
             </ul>
         </nav>

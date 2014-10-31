@@ -18,7 +18,7 @@
             </h1>
         </div>
 
-
+        <br/>
         
         <div class='g mbl' id='course-list'>
             
@@ -26,14 +26,14 @@
             <div class='g-b g-b--l--1of2'>
                 <article class='card card--a course' id='course_115'>
                     <div style="float: right">
-                        <a href="/paths/ruby" class="btn btn--ruby admin-delete-btn">Delete</a>
+                        <a href="<?php echo base_url();?>index.php/admin/delete_speaker?dduid=<?php echo $row->u_id; ?>" class="btn btn--ruby admin-delete-btn">Delete</a>
                     </div>
                     <div class='course-badge badge'>
                         <img class="badge-img" height="110" itemprop="image" src="<?php echo $row->image_url; ?>" width="110" />
                     </div>
                     <div class='course-content'>
                         <h2 class='course-title'>
-                            <a href="/courses/front-end-foundations" class="course-title-link"><?php echo $row->name; ?></a>
+                            <span class="course-title-link"><?php echo $row->name; ?></span>
                         <div class='dn di--m'> <br/><br/>
                         <?php $cat = $row->category;
                             if ($cat == 1) {

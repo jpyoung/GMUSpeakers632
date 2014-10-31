@@ -79,6 +79,12 @@ class Admin extends CI_Controller {
 
 	}
 
+	// Delete Speaker Page
+	function delete_speaker() {
+		$uid = $_GET['dduid'];
+		echo $uid;
+	}
+
 	// /**
 	// * This is the main dashboard page function.  It is called when the dashboard
 	// * view is loaded/refreshed.    
