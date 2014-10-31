@@ -2,7 +2,6 @@
 <?php include('common/header.php'); ?>
 <!-- end: vertNavBar section -->
 
-<?php //print_r($talks); ?>
 
 <main class='content'>
 
@@ -27,34 +26,60 @@
 <div class='cell well'>
 <div class='cell cell--s well'>
     <h1 class='h2 mbm mtm tac thb tfl twn'>
-        Wander through <strong class="tfb">All Lectures</strong>, and select one that sparks your interest.  If you like what you see, you may request a speaking engagement.
+        Wander through <strong class="tfb">All Talks</strong>, and select one that sparks your interest.  If you like what you see, you may request a speaking engagement.
     </h1>
 </div>
+
+
 
 
 <div class="row">
     <div class='dn di--m' style="margin-right: 10px;">
         Filter By: 
     </div>
+
+    <?php foreach($filter['remaining'] as $row): ?>
+        <div class='dn di--m'>
+            <?php echo $row; ?>
+        </div>
+    <?php endforeach; ?>
+
+    <div class='dn di--m' style="margin-left:20px;">
+        Current Filter: 
+    </div>
     <div class='dn di--m'>
-        <a href="/paths/javascript" class="tag tag--header tag--javascript filterTagPill">Tech Talk</a>
+        <?php echo $filter['cf']; ?>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- <div class="row">
+    <div class='dn di--m' style="margin-right: 10px;">
+        Filter By: 
+    </div>
+    <div class='dn di--m'>
+        <a href="<?php echo base_url();?>index.php/home/filter_update?fid=2" class="tag tag--header tag--javascript filterTagPill">Tech Talk</a>
     </div>
     <div class="dn di--m">
-        <a href="/paths/git" class="tag tag--header tag--ruby filterTagPill">Other</a>
-    </div>
-    <div class="dn di--m">
-        <a href="/paths/html-css" class="tag tag--header tag--html-css filterTagPill">Business</a>
+        <a href="<?php echo base_url();?>index.php/home/filter_update?fid=3" class="tag tag--header tag--html-css filterTagPill">Business</a>
     </div>
     <div class='dn di--m'>
-            <a href="/paths/ios" class="tag tag--header tag--ios filterTagPill">Science</a>
+            <a href="<?php echo base_url();?>index.php/home/filter_update?fid=4" class="tag tag--header tag--ios filterTagPill">Science</a>
+    </div>
+    <div class="dn di--m">
+        <a href="<?php echo base_url();?>index.php/home/filter_update?fid=5" class="tag tag--header tag--ruby filterTagPill">Other</a>
     </div>
     <div class='dn di--m' style="margin-left:20px;">
         Current Filter: 
     </div>
     <div class='dn di--m'>
-            <a href="/paths/ios" class="tag tag--header tag--ios filterTagPill" style="background-color: #278998;">All</a>
+            <a href="<?php echo base_url();?>index.php/home/filter_update?fid=1" class="tag tag--header tag--ios filterTagPill" style="background-color: #278998;">All</a>
     </div>
-</div>
+</div> -->
 </br>
 
 

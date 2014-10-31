@@ -23,6 +23,7 @@ class Home extends CI_Controller {
 		$data["talks"] = $this->talks->get_all_talks();
 		$this->load->model("dashboard_prefs");
 		$data["prefs"] = $this->dashboard_prefs->get_dashboard_prefs();
+		$data["filter"] = $this->filter_by();
 
 		//get_all_talks
 		$this->load->view('home', $data);
@@ -41,7 +42,7 @@ class Home extends CI_Controller {
 	function goto_speakerListing() {
 		$this->load->model("talks");
 		$data["talks"] = $this->talks->all_lecture_listing();
-
+		$data["filter"] = $this->filter_by();
 
 
 		$this->load->view('speakerListing', $data);
@@ -57,7 +58,27 @@ class Home extends CI_Controller {
 	}
 
 
+	function filter_by() {
+		$fid = 1;
+		if (isset($_GET['fid'])) {
+			$fid = $_GET['fid'];
+		}
+		$a = array();
+		$a[1] = '<a href="' . base_url() . 'index.php/home/filter_update?fid=2" class="tag tag--header tag--javascript filterTagPill">Tech Talk</a>';
+		$a[2] = '<a href="' . base_url() . 'index.php/home/filter_update?fid=3" class="tag tag--header tag--html-css filterTagPill">Business</a>';
+		$a[3] = '<a href="' . base_url() . 'index.php/home/filter_update?fid=4" class="tag tag--header tag--ios filterTagPill">Science</a>';
+		$a[4] = '<a href="' . base_url() . 'index.php/home/filter_update?fid=5" class="tag tag--header tag--ruby filterTagPill">Other</a>';
+		$a[0] = '<a href="' . base_url() . 'index.php/home/filter_update?fid=1" class="tag tag--header tag--ios filterTagPill" style="background-color: #278998;">All</a>';
+		$r = array();
+		$r['cf'] = $a[$fid - 1];
+		unset($a[$fid - 1]);
+		$r['remaining'] = $a;
+		return $r;
+	}
 
+	function filter_update() {
+		$this->goto_speakerListing();
+	}
 
 
 
