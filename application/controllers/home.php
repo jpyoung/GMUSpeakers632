@@ -19,14 +19,17 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->model("talks");
-		$data["talks"] = $this->talks->get_all_talks();
-		$this->load->model("dashboard_prefs");
-		$data["prefs"] = $this->dashboard_prefs->get_dashboard_prefs();
-		$data["filter"] = $this->filter_by();
 
-		//get_all_talks
-		$this->load->view('home', $data);
+		$this->goto_speakerListing();
+
+		// $this->load->model("talks");
+		// $data["talks"] = $this->talks->get_all_talks();
+		// $this->load->model("dashboard_prefs");
+		// $data["prefs"] = $this->dashboard_prefs->get_dashboard_prefs();
+		// $data["filter"] = $this->filter_by();
+
+		// //get_all_talks
+		// $this->load->view('home', $data);
 	}
 
 	function goto_about() {
@@ -82,7 +85,7 @@ class Home extends CI_Controller {
 			$data["talks"] = $tmp;
 		}
 
-		$this->load->view('speakerListing', $data);
+		$this->load->view('home', $data);
 	}
 
 
