@@ -39,6 +39,9 @@ class Admin extends CI_Controller {
 		$nid = $_GET['nid'];
 		$data['nav_selection'] = $nid;
 
+		$this->load->model("speakers");
+		$data["speakers"] = $this->speakers->get_speakers();
+
 		$this->load->view('backend/adminDeleteSpeaker', $data);
 	}
 
