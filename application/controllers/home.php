@@ -41,9 +41,46 @@ class Home extends CI_Controller {
 	// Find a lecture button on the home page
 	function goto_speakerListing() {
 		$this->load->model("talks");
-		$data["talks"] = $this->talks->all_lecture_listing();
+		$talks = $this->talks->all_lecture_listing();
 		$data["filter"] = $this->filter_by();
 
+		$t = $data['filter']['fid'];
+
+		if ($t == 1) {
+			$data["talks"] = $talks;
+		} else {
+			$tmp = array();
+			$counter = 0;
+			foreach ($talks as $rows) {
+				 $x = $rows['userinfo']->category;
+				if ($t == 4) {
+					// science
+					if ($x == 2) {
+						$tmp[$counter++] = $rows;
+					}
+				}
+				if ($t == 2) {
+					// tech talks
+					if ($x == 1) {
+						$tmp[$counter++] = $rows;
+					}
+				}
+				if ($t == 3) {
+					// business
+					if ($x == 3) {
+						$tmp[$counter++] = $rows;
+					}
+				}
+				if ($t == 5) {
+					// others
+					if ($x == 4) {
+						$tmp[$counter++] = $rows;
+					}
+				}
+				
+			}
+			$data["talks"] = $tmp;
+		}
 
 		$this->load->view('speakerListing', $data);
 	}
@@ -73,6 +110,7 @@ class Home extends CI_Controller {
 		$r['cf'] = $a[$fid - 1];
 		unset($a[$fid - 1]);
 		$r['remaining'] = $a;
+		$r['fid'] = $fid;
 		return $r;
 	}
 
