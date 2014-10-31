@@ -32,6 +32,32 @@
 </div>
 
 
+<div class="row">
+    <div class='dn di--m' style="margin-right: 10px;">
+        Filter By: 
+    </div>
+    <div class='dn di--m'>
+        <a href="/paths/javascript" class="tag tag--header tag--javascript filterTagPill">Tech Talk</a>
+    </div>
+    <div class="dn di--m">
+        <a href="/paths/git" class="tag tag--header tag--ruby filterTagPill">Other</a>
+    </div>
+    <div class="dn di--m">
+        <a href="/paths/html-css" class="tag tag--header tag--html-css filterTagPill">Business</a>
+    </div>
+    <div class='dn di--m'>
+            <a href="/paths/ios" class="tag tag--header tag--ios filterTagPill">Science</a>
+    </div>
+    <div class='dn di--m' style="margin-left:20px;">
+        Current Filter: 
+    </div>
+    <div class='dn di--m'>
+            <a href="/paths/ios" class="tag tag--header tag--ios filterTagPill" style="background-color: #278998;">All</a>
+    </div>
+</div>
+</br>
+
+
  <?php foreach($talks as $row): ?>
     <div class='g-b g-b--l--1of2'>
         <article class='card card--a course' id='course_113' itemscope='' itemtype='http://schema.org/Product'>

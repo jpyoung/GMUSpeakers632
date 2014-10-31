@@ -4264,5 +4264,7 @@ input[type="radio"] {
     margin-bottom: 0px;
 }
 
-
+.filterTagPill {
+    font-size: 75%;
+}
 
