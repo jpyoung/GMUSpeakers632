@@ -7,8 +7,8 @@
     <script type="text/javascript">
         var baseurl = "<?php echo base_url(); ?>";
     </script>
-
     <link href="<?php echo base_url(); ?>assets/BaseStyle.css" media="screen" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
 
 
 
@@ -34,7 +34,7 @@
                             <b class="srt">Menu</b>
                         </div>
                     </a><ol class="nav-list list fr">
-                    <li class="nav-item list-item"><a id="signinlink" href="<?php echo base_url(); ?>index.php/home/goto_SignIn" class="nav-item-link list-item-link">Sign in</a></li>
+                    <li class="nav-item list-item"><a id="signinlink" href="#" class="nav-item-link list-item-link">Sign in</a></li>
                 </ol>
                 </nav>
 
@@ -42,3 +42,17 @@
         </div>
     </div>
 </header>
+
+<script>
+$(function(){
+
+    $("#signinlink").click(function() {
+        //alert("link clicked");
+        $("#dropIn").toggle( "slow", function() {
+            // Animation complete.
+        });
+    });
+
+});    
+
+</script>

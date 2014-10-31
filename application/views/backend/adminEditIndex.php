@@ -7,8 +7,6 @@
 <?php include('common/nav.php'); ?>
 <!-- end: vertNavBar section -->
 
-<?php print_r($prefs); ?>
-
 
 <main class='content'><div class='row'>
     <div class='cell well'>
@@ -51,9 +49,6 @@
 
 
 </main>
-
-
-
 
 
 

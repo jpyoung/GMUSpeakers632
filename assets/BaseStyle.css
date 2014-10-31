@@ -4251,3 +4251,18 @@ input[type='email'], input[type='number'], input[type='password'], input[type='s
 input[type="radio"] {
     margin-right: 10px;
 }
+
+.drLogin {
+    width: 150px;
+    float: left;
+}
+
+.drWell {
+    overflow: auto;
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+

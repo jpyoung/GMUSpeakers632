@@ -2,8 +2,6 @@
 
 class Dashboard_prefs extends CI_Model {
 	
-
-
 	function get_dashboard_prefs() {
 		$query = $this->db->get('dashboard');
 		if ($query->num_rows) {

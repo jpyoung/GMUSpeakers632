@@ -4,7 +4,26 @@
 
 <?php //print_r($talks); ?>
 
-<main class='content'><div class='row'>
+<main class='content'>
+
+<!-- style="display: none;" -->
+<div id="dropIn" style="display: none;">
+    <!-- start: vertNavBar section -->
+    <?php include('loginDrop.php'); ?>
+    <!-- end: vertNavBar section -->
+</div>
+
+<div class="row row--b">
+    <div class="cell well tci">
+        <div class="mbm mbl--m pts tac">
+            <h1 class="mbf tci">MASON SPEAKERS</h1>
+            <p class="oph tci tsi tsl">Connecting the University with the Community.</p>
+        </div>
+    </div>
+</div>
+
+
+<div class='row'>
 <div class='cell well'>
 <div class='cell cell--s well'>
     <h1 class='h2 mbm mtm tac thb tfl twn'>
