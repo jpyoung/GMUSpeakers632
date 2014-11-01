@@ -34,7 +34,16 @@ class Speakers extends CI_Model {
 		$this->db->where('tid', $tid);
 		$this->db->delete('Talks');
 		return true;
-	} 
+	}
+
+
+
+	function add_speaker($data) {
+		// admin can insert a new speaker into the database. 
+		$this->db->insert('user', $data);
+		return true; 
+	}
+
 
 	
 }

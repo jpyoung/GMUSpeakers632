@@ -29,7 +29,10 @@ class Admin extends CI_Controller {
 	}
 
 	function goto_add_speaker_page() {
-		$nid = $_GET['nid'];
+		$nid = 2;
+		if (isset($_GET['nid'])) {
+			$nid = $_GET['nid'];
+		}
 		$data['nav_selection'] = $nid;
 
 		$this->load->view('backend/adminAddUser', $data);
@@ -91,7 +94,14 @@ class Admin extends CI_Controller {
 
 	// Add new Speaker Page
 	function add_new_user() {
-		echo "Adding new Users";
+		//echo "Adding new Users";
+		$fullName = $_POST["newUserFullName"];
+		$imgURL = $_POST["newUserURL"];
+		$cat = $_POST["categ"];
+		$dd = array("user_type" => 2, "name" => $fullName, "username" => $fullName, "password" => "speaker_" . str_replace(' ', '', $fullName), "category" => $cat, "image_url" => $imgURL);
+		$this->load->model("speakers");
+		$this->speakers->add_speaker($dd);
+		$this->goto_add_speaker_page();
 	}
 
 

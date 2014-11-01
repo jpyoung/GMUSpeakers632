@@ -25,13 +25,13 @@
             <div class='g-b g-b--l--1of2'>
                 <article class='card card--a course' id='course_115'>
                     <div class='course-badge badge'>
-                        <a href="/courses/front-end-foundations"><img class="badge-img" height="110" itemprop="image" src="images/noProfilePicture.png" width="110" />
+                        <a href="/courses/front-end-foundations"><img class="badge-img" height="110" itemprop="image" src="<?php echo base_url(); ?>/assets/images/noProfilePicture.png" width="110" />
                         </a></div>
                     <div class='course-content'>
                         <h2 class='course-title'>
                             <a href="/courses/front-end-foundations" class="course-title-link">Name will go here</a>
                             <div class='dn di--m'>
-                                <a href="/paths/javascript" class="tag tag--header tag--javascript">Speaker Category will go here</a>
+                                <a href="/paths/javascript" class="tag tag--header tag--javascript">Speaker Category</a>
                             </div>
                         </h2>
                     </div>
@@ -43,11 +43,11 @@
                 <form accept-charset="UTF-8" action="<?php echo base_url(); ?>index.php/admin/add_new_user" method="post">
 
                     <fieldset class="form-field">
-                        <label class="form-label" for="user_username">Speakers Full Name</label><input class="form-input" id="registration_username" name="user[username]" size="30" type="text" autofocus>
+                        <label class="form-label">Speakers Full Name</label><input class="form-input" id="newUserFullName" name="newUserFullName" size="30" type="text" autofocus>
                     </fieldset>
 
                     <fieldset class="form-field">
-                        <label class="form-label" data-required="true" for="user_password">Linkedin Profile Image URL</label><input class="form-input mbxs js-showPassword-input" id="registration_password" name="user[password]" placeholder="Image URL">
+                        <label class="form-label">Linkedin Profile Image URL</label><input class="form-input mbxs js-showPassword-input" id="newUserURL" name="newUserURL" type="text" placeholder="Image URL">
                     </fieldset>
 
                     <fieldset class="form-field">
@@ -60,7 +60,6 @@
 
                     <div class="bdrb mbm mtm mtl--m pbm tac">
                         <input class="form-btn btn mbm" name="commit" type="submit" value="Create">
-                        <input class="form-btn btn mbm" name="commit" type="submit" value="Cancel">
                     </div>
 
                 </form>
@@ -69,11 +68,20 @@
 
         </div>
 
-    <style>
+<script>
 
+$(function(){
 
+    $("#signinlink").click(function() {
+        //alert("link clicked");
+        $("#dropIn").toggle( "slow", function() {
+            // Animation complete.
+        });
+    });
 
-    </style>
+}); 
+
+</script>
 
 
 
