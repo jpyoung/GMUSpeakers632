@@ -60,7 +60,7 @@
             <?php foreach($talks as $row): ?>
             <div class='card card--b mbm--m mbs' id='course-overview'>
                 <div style="float: right">
-                    <a href="/paths/ruby" class="btn btn--html admin-delete-btn">Edit</a>
+                    <a href="#" class="btn btn--html admin-delete-btn">Edit</a>
                     <a href="<?php echo base_url(); ?>index.php/dashboard/speaker_delete_talk?sdtid=<?php echo $row->tid; ?>" class="btn btn--ruby admin-delete-btn">Delete</a>
                 </div>
                 <div class='bucket bucket--flag'>
@@ -74,53 +74,51 @@
                         <p class='mbf'><?php echo $row->description; ?></p>
                     </div>
                 </div>
+
+                <div id="editSpeach_<?php echo $row->tid; ?>" style="display: none;">
+                    <!--editing mode-->
+                    <div class='bucket bucket--flag' style="background-color: white; width: 100%; margin-top: 10px; border-top: 1px solid black;">
+                        <div><h3 style="text-align: center; margin-top: 10px;">Editing Mode</h3></div><br/>
+                        <form accept-charset="UTF-8" action="/users?analytics%5BSign+Up+Page%5D=%2Fusers%2Fsign_up" method="post" style="margin: 0 20px 0 20px;">
+
+                            <fieldset class="form-field">
+                                <label class="form-label" for="user_username">Topic</label>
+                                <input class="form-input" id="registration_username" name="user[username]" type="text" value="Tags : et rami Ipsum">
+                            </fieldset>
+
+                            <fieldset class="form-field">
+                                <label class="form-label" data-required="true" for="user_password">Description</label>
+                                <input class="form-input mbxs js-showPassword-input" id="registration_password" name="user[password]" value="Semita sub productione solvo git Tags : ramos remissionis , et Flickr Github Ipsum .">
+                            </fieldset>
+
+                            <div class="mbm mtm tac">
+                                <input class="form-btn btn mbm" style="min-width: 10px;" data-disable-with="Creating…" name="commit" type="submit" value="Save Edit">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+
+
             </div>
             <?php endforeach; ?>
 
 
+// <script>
+// $(function(){
+
+//     $("#signinlink").click(function() {
+//         //alert("link clicked");
+//         $("#dropIn").toggle( "slow", function() {
+//             // Animation complete.
+//         });
+//     });
+
+// }); 
+// </script>
 
 
-            <div class='card card--b mbm--m mbs' id='course-overview'>
-                <div style="float: right">
-                    <a href="/paths/ruby" class="btn btn--html admin-delete-btn">Edit</a>
-                    <a href="/paths/ruby" class="btn btn--ruby admin-delete-btn">Delete</a>
-                </div>
-                <div class='bucket bucket--flag'>
-                    <div class='bucket-media dn db--m'>
-                        <div class='badge' style="background: #d7a627; color: #fff;">
-                            <p style="margin-top: 40px; margin-left: 10px;">TECH TALK</p>
-                        </div>
-                    </div>
-                    <div class='bucket-content'>
-                        <h3>
-                            Tags : et rami Ipsum
-                        </h3>
-                        <p class='mbf'>Semita sub productione solvo git Tags : ramos remissionis , et Flickr Github Ipsum .</p>
-                    </div>
-                </div>
-
-                <!--editing mode-->
-                <div class='bucket bucket--flag' style="background-color: white; width: 100%; margin-top: 10px; border-top: 1px solid black;">
-                    <div><h3 style="text-align: center; margin-top: 10px;">Editing Mode</h3></div><br/>
-                    <form accept-charset="UTF-8" action="/users?analytics%5BSign+Up+Page%5D=%2Fusers%2Fsign_up" method="post" style="margin: 0 20px 0 20px;">
-
-                        <fieldset class="form-field">
-                            <label class="form-label" for="user_username">Topic</label>
-                            <input class="form-input" id="registration_username" name="user[username]" type="text" value="Tags : et rami Ipsum">
-                        </fieldset>
-
-                        <fieldset class="form-field">
-                            <label class="form-label" data-required="true" for="user_password">Description</label>
-                            <input class="form-input mbxs js-showPassword-input" id="registration_password" name="user[password]" value="Semita sub productione solvo git Tags : ramos remissionis , et Flickr Github Ipsum .">
-                        </fieldset>
-
-                        <div class="mbm mtm tac">
-                            <input class="form-btn btn mbm" style="min-width: 10px;" data-disable-with="Creating…" name="commit" type="submit" value="Save Edit">
-                        </div>
-
-                    </form>
-                </div>
-            </div>
 
 
 
