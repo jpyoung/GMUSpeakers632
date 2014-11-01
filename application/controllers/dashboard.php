@@ -40,8 +40,35 @@ class Dashboard extends CI_Controller {
 
 	function speaker_page() {
 		$this->auth->check_session();
-		$this->load->view('backend/speakerUpdateStuff');
+
+		$uid = $this->session->userdata('user_id');
+		$this->load->model("talks");
+		$data["profile"] = $this->talks->get_detailed_speaker_info($uid);
+		$data["talks"] = $this->talks->get_talks_by_speaker($uid);
+		$this->load->view('backend/speakerUpdateStuff', $data);
 	}
+
+
+	function add_a_talk() {
+		$uid = $this->session->userdata('user_id');
+		$this->load->model("talks");
+		$data["profile"] = $this->talks->get_detailed_speaker_info($uid);
+		$profName = $data["profile"]['name'];
+		$topic = $_POST["sp_topic"];
+		$desc = $_POST["sp_description"];
+		$dd = array("title" => $topic, "description" => $desc, "prof_name" => $profName, "u_id" => $uid);
+		$this->talks->insert_new_talk_by_speaker($dd);
+		$this->speaker_page();
+	}
+
+
+	function speaker_delete_talk() {
+		$dtid = $_GET['sdtid'];
+		$this->load->model("speakers");
+		$this->speakers->delete_talk($dtid);
+		$this->speaker_page();
+	}
+	//Build a solid foundation in Git
 	
 
 
