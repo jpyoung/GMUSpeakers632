@@ -25,11 +25,11 @@
             <div class='g-b g-b--l--1of2'>
                 <article class='card card--a course' id='course_115'>
                     <div class='course-badge badge'>
-                        <a href="/courses/front-end-foundations"><img class="badge-img" height="110" itemprop="image" src="<?php echo base_url(); ?>/assets/images/noProfilePicture.png" width="110" />
-                        </a></div>
+                        <img class="badge-img" height="110" itemprop="image" src="<?php echo base_url(); ?>/assets/images/noProfilePicture.png" width="110" />
+                    </div>
                     <div class='course-content'>
                         <h2 class='course-title'>
-                            <a href="/courses/front-end-foundations" class="course-title-link">Name will go here</a>
+                            <span id="tempNameNewUser" class="course-title-link">Name will go here</span>
                             <div class='dn di--m'>
                                 <a href="/paths/javascript" class="tag tag--header tag--javascript">Speaker Category</a>
                             </div>
@@ -72,11 +72,12 @@
 
 $(function(){
 
-    $("#signinlink").click(function() {
-        //alert("link clicked");
-        $("#dropIn").toggle( "slow", function() {
-            // Animation complete.
-        });
+    $("#newUserFullName").keyup(function() {
+        if ($(this).val() != "") {
+            $("#tempNameNewUser").html($(this).val());
+        } else {
+            $("#tempNameNewUser").html("Name will go here");
+        }
     });
 
 }); 

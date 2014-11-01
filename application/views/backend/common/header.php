@@ -9,6 +9,7 @@
     </script>
 
     <link href="<?php echo base_url(); ?>assets/BaseStyle.css" media="screen" rel="stylesheet" type="text/css">
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
 
 
 
