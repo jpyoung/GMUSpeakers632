@@ -14,7 +14,7 @@
                 </div>
                 <div class="g-b g-b--m--1of2 g-b--l--3of5">
                     <div class="footer-about">
-                        <h1>George Mason University</h1>
+                        <h1><a href="<?php echo base_url(); ?>">Return to Main</a></h1>
                     </div>
                 </div>
             </div>

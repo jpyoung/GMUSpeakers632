@@ -22,6 +22,7 @@ class Talks extends CI_Model {
 	}
 
 	function all_lecture_listing() {
+		// retrieves all the talks for the home page, including info from both the Talks and user table. 
 		$over = array();
 		$totalR = array();
 		$totalR['talks'] = $this->get_all_talks();
@@ -35,12 +36,12 @@ class Talks extends CI_Model {
 
 
 	function get_detailed_talk_info($tid) {
-
+		// This function retrieves the information for a detailed view a given talk
 		$query = $this->db->query("SELECT u.u_id, u.bio, u.user_type, u.name, u.image_url, u.category, t.tid, t.description, t.title from user as u, Talks as t where u.u_id = t.u_id and t.tid = " . $tid);
-
-		//return 4;
+		if ($query->num_rows == 0) {
+			return 0;
+		}
 		return $query->row_array();
-
 	}
 
 	function post_a_talk_review($tid, $comment) {
@@ -50,6 +51,7 @@ class Talks extends CI_Model {
 	}
 
 	function get_talk_reviews($tid) {
+		// this function is used to retrieved the comments associated with a given talk based on their TID
 		$this->db->where('tid', $tid);
 		$query = $this->db->get('reviews');
 		if ( $query->num_rows ) {
@@ -62,40 +64,7 @@ class Talks extends CI_Model {
 //SELECT u.u_id, u.user_type, u.name, u.image_url, u.category, t.tid, t.description, t.title from user as u, Talks as t where u.u_id = t.u_id;
 
 // SELECT u.u_id, u.user_type, u.name, u.image_url, u.category, t.tid, t.description, t.title from user as u, Talks as t where u.u_id = t.u_id and t.tid = 4;
-	
-	//when a user logs in, this method is called to update the stats_tracker table.
-	//the username and timestamp are entered into this table.
-	//@param $activity_type  : i.e. login, upload, and etc. 
-	// function update_stats_tracker($activity_type) {
-	// 	$username = $this->session->userdata('username');
-	// 	$ar = array('username' => $username, 'activity_type' => $activity_type);
-	// 	$this->db->insert('stats_tracker', $ar);
-	// }
-	
-	// //function is used to get a user's stats tracker activity
-	// //by the passed in username from the DB. 
-	// function get_stats_tracker_by_userid($userid) {
-		
-	// 	$fu = $this->find_username($userid);
-	// 	$username = $fu->u_username;
-		
-	// 	$this->db->where('username = ', $username);
- //        $res = $this->db->get('stats_tracker');
-	// 	if($res->num_rows){
-	// 		return $res->result();
-	// 	} 
-	// 	return false;
-	// }
-	
-	// //function is used to find the username by the passed in userid. 	
-	// function find_username($userid) {
-	// 	$this->db->where('u_id', $userid);
-	// 	$query = $this->db->get('user');
-	// 	if ($query->num_rows) {
-	// 		return $query->row();
-	// 	}
-	// 	return false;
-	// }
+
 	
 }
 

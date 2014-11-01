@@ -24,11 +24,6 @@
                 <form accept-charset="UTF-8" action="<?php echo base_url();?>index.php/admin/ehp_form_action" method="post">
 
                     <fieldset class="form-field">
-                        <label class="form-label">Youtube Video URL</label>
-                        <input class="form-input" id="youtube_url" name="youtube_url" size="30" type="text" autofocus value="<?php echo $prefs[0]->video_url; ?>">
-                    </fieldset>
-
-                    <fieldset class="form-field">
                         <label class="form-label" data-required="true">Homepage Center Content</label>
                         <textarea id="center_content" name="center_content" class="form-input mbxs js-showPassword-input"><?php echo $prefs[0]->center_content; ?>
                         </textarea>

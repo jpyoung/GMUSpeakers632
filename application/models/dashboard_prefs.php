@@ -10,8 +10,8 @@ class Dashboard_prefs extends CI_Model {
 		return false;
 	}
 
-	function update_dashboard_prefs($url, $content) {
-		$data = array('video_url' => $url, 'center_content' => $content);
+	function update_dashboard_prefs($content) {
+		$data = array('center_content' => $content);
 		$this->db->where('id', 1);
 	    $this->db->update('dashboard', $data);
 	    return true;	
@@ -19,9 +19,8 @@ class Dashboard_prefs extends CI_Model {
 
 	function reset_to_default() {
 		$r = $this->get_dashboard_prefs();
-		$tvu = $r[0]->default_url;
 		$tc = $r[0]->default_center_content;
-		return $this->update_dashboard_prefs($tvu, $tc);
+		return $this->update_dashboard_prefs($tc);
 	}
 	
 }

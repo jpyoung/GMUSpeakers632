@@ -27,7 +27,7 @@
 <div class='cell well'>
 <div class='cell cell--s well'>
     <h1 class='h2 mbm mtm tac thb tfl twn'>
-        Wander through <strong class="tfb">All Talks</strong>, and select one that sparks your interest.  If you like what you see, you may request a speaking engagement.
+         <?php echo $prefs[0]->center_content; ?>
     </h1>
 </div>
 

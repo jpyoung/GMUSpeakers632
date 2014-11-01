@@ -84,7 +84,9 @@ class Home extends CI_Controller {
 			}
 			$data["talks"] = $tmp;
 		}
-
+		$this->load->model("dashboard_prefs");
+		$data["prefs"] = $this->dashboard_prefs->get_dashboard_prefs();
+		
 		$this->load->view('home', $data);
 	}
 
@@ -93,7 +95,6 @@ class Home extends CI_Controller {
 		// id of the selected talk on the lecture listing page
 		$tid = $_GET['tid'];
 		 
-
 		$this->load->model("talks");
 		$data["talk"] = $this->talks->get_detailed_talk_info($tid);
 		$data["reviews"] = $this->talks->get_talk_reviews($tid);

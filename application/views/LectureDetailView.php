@@ -75,18 +75,18 @@
                             <h2 class='mbf tcs tss twb' style="font-size: 80%;">To request this talk, please submit the below form.  The GSB coordinator will get back to you with scheduling details</h2>
                             <div class='card-section'>
                                 <div class='bucket'>
-                                    <form accept-charset="UTF-8" action="/users?analytics%5BSign+Up+Page%5D=%2Fusers%2Fsign_up" method="post">
+                                    <form accept-charset="UTF-8" action="<?php echo base_url(); ?>index.php/home/goto_detail_lecture_view?tid=<?php echo $talk["tid"]; ?>" method="post">
 
                                         <fieldset class="form-field">
-                                            <label class="form-label" for="user_username">Name</label><input class="form-input" id="registration_username" name="user[username]"  type="text" placeholder="First & Last">
+                                            <label class="form-label">Name</label><input class="form-input" type="text" placeholder="First & Last">
                                         </fieldset>
 
                                         <fieldset class="form-field">
-                                            <label class="form-label" data-required="true" for="user_password">Email Address</label><input class="form-input mbxs js-showPassword-input" id="registration_password" name="user[password]" placeholder="johnDoe@gmu.edu">
+                                            <label class="form-label" data-required="true">Email Address</label><input class="form-input mbxs js-showPassword-input" placeholder="johnDoe@gmu.edu">
                                         </fieldset>
 
                                         <div class="bdrb mbm mtm mtl--m pbm tac">
-                                            <input class="form-btn btn mbm" data-disable-with="Creating…" name="commit" type="submit" value="Request">
+                                            <input class="form-btn btn mbm" name="commit2" type="submit" value="Request">
                                         </div>
 
                                     </form>
@@ -107,9 +107,10 @@
 
             <div class="row row--a" id="reviews">
                 <div class="cell well">
-                    <h2 class="mbm mbl--m tcs tss ttu twb">Talk Reviews (<?php echo count($reviews); ?>)</h2>
+                    <h2 class="mbm mbl--m tcs tss ttu twb">Talk Reviews (<?php echo (($reviews == null) ? "0" : count($reviews)); ?>)</h2>
                     <div class="g collection collection--m--1of2 js-reviews">
 
+                        <?php if ($reviews != null){ ?>
                         <?php foreach($reviews as $row): ?>
                         <div class="g-b g-b--m--1of2 collection-item">
                             <div class="card card--b">
@@ -121,6 +122,7 @@
                             </div>
                         </div>
                         <?php endforeach; ?>
+                        <?php } ?>
 
                     </div>
                     <br/>
@@ -138,6 +140,7 @@
 
                         </form>
                     </div>
+
                 </div>
             </div>
 
