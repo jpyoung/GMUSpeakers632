@@ -98,10 +98,25 @@ class Home extends CI_Controller {
 		$data["talk"] = $this->talks->get_detailed_talk_info($tid);
 		$data["reviews"] = $this->talks->get_talk_reviews($tid);
 
-		print_r($data["reviews"]);
+		$this->load->view('LectureDetailView', $data);
+	}
+
+	function post_a_talk_comment() {
+		// a user can post a comment for a talk in the detailed talk view
+		$tid = $_GET['tid'];
+		$comment = $_POST['commentTID'];
+
+		$this->load->model("talks");
+
+		$this->talks->post_a_talk_review($tid, $comment);
+
+		$data["talk"] = $this->talks->get_detailed_talk_info($tid);
+		$data["reviews"] = $this->talks->get_talk_reviews($tid);
 
 		$this->load->view('LectureDetailView', $data);
 	}
+
+
 
 
 	function filter_by() {

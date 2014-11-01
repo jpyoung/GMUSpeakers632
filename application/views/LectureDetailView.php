@@ -125,10 +125,10 @@
                     </div>
                     <br/>
                     <div class="mbm mbl--m tac">
-                        <form accept-charset="UTF-8" action="/users?analytics%5BSign+Up+Page%5D=%2Fusers%2Fsign_up" method="post">
+                        <form accept-charset="UTF-8" action="<?php echo base_url(); ?>index.php/home/post_a_talk_comment?tid=<?php echo $talk["tid"];?>" method="post">
 
                             <fieldset class="form-field">
-                                <label class="form-label" for="user_username">Comment</label><input class="form-input" id="registration_username" name="user[username]"  type="text">
+                                <label class="form-label">Comment</label><input class="form-input" id="commentTID" name="commentTID" type="text">
                             </fieldset>
 
 

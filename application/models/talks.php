@@ -43,6 +43,12 @@ class Talks extends CI_Model {
 
 	}
 
+	function post_a_talk_review($tid, $comment) {
+		// insert a comment for a given talk
+		$data = array('tid' => $tid, 'comment' => $comment);
+		$this->db->insert('reviews', $data); 
+	}
+
 	function get_talk_reviews($tid) {
 		$this->db->where('tid', $tid);
 		$query = $this->db->get('reviews');
