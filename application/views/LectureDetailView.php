@@ -10,13 +10,29 @@
                 <div class='bucket bucket--l bucket--flag mts--m tac tal--m'>
                     <div class='bucket-media'>
                         <div class='badge badge--m dn db--m'>
-                            <img class="badge-img" height="120" src="images/jeff_offutt.gif" width="100" />
+                            <img class="badge-img" height="120" src="<?php echo $talk["image_url"]; ?>" width="100" />
                         </div>
                     </div>
                     <div class='bucket-content'>
-                        <h1 class='hero-title mbs ttu'>Coding Praxi</h1>
-                        <p class='mbxs'><a href="/paths/git" class="opf tag tag--javascript">TECH TALK</a></p>
-                        <h2 class='hero-title mbs ttu'>By Jeff Offutt</h2>
+                        <h1 class='hero-title mbs ttu'><?php echo $talk["title"]; ?></h1>
+                        <p class='mbxs'>
+                            <?php $cat = $talk["category"];
+                                if ($cat == 1) {
+                                    // tech talk
+                                    echo '<span class="opf tag tag--javascript">Tech Talk</span>';
+                                } else if ($cat == 2) {
+                                    //science
+                                    echo '<span class="opf tag tag--ios">Science</span>';
+                                } else if ($cat == 3) {
+                                    //business
+                                    echo '<span class="opf tag tag--html-css">Business</span>';
+                                } else {
+                                    //other
+                                    echo '<span class="opf tag tag--ruby">Other</span>';
+                                }
+                            ?>
+                        </p>
+                        <h2 class='hero-title mbs ttu'>By <?php echo $talk["name"]; ?></h2>
 
                     </div>
                 </div>
@@ -31,17 +47,15 @@
                     <div class='mbm'>
 
                         <div class='mbl--m'>
-                            <h2 class='label'>Lecture Description</h2>
+                            <h2 class='label'>Talk Description</h2>
 
-                            <p><strong>Coding Praxi </strong> - Mason Orator C continet in professoribus , investigatores , Administratores, et providere alumni voluntariis ex Georgio Mason qui University lectionibus , et hospitio et muneribus tulit , ut Instituta et negotiis gratuitus.</p>
+                            <p><strong><?php echo $talk["title"]; ?> </strong> - <?php echo $talk["description"]; ?></p>
 
                         </div>
 
                         <div class='mbl--m'>
                             <h2 class='label'>BIO</h2>
-
-                            <p>Dr. Jeff Offutt is Professor of Software Engineering at George Mason University. Offutt was awarded the George Mason University Teaching Excellence Award, Teaching With Technology, in 2013. He leads the MS in Software Engineering program at GMU, teaches Software Engineering courses at all levels and has developed new courses on several Software Engineering subjects, including web engineering, software testing, construction, design, usability, experimentation, and analysis. His textbook, Introduction to Software Testing (co-authored with Paul Ammann), was published by Cambridge University Press in January 2008 and is the leading worldwide textbook in software testing. Offutt was named a GMU Outstanding Faculty member in 2008 and 2009.</p>
-
+                            <p><?php echo $talk["bio"]; ?></p>
                         </div>
 
 
@@ -57,8 +71,8 @@
                     <div class='card card--a has-card-section mbl'>
 
                         <div class='card-section'>
-                            <h3>Request Lecture</h3>
-                            <h2 class='mbf tcs tss twb' style="font-size: 80%;">To request this lecture, please submit the below form.  The GSB coordinator will get back to you with scheduling details</h2>
+                            <h3>Request Talk</h3>
+                            <h2 class='mbf tcs tss twb' style="font-size: 80%;">To request this talk, please submit the below form.  The GSB coordinator will get back to you with scheduling details</h2>
                             <div class='card-section'>
                                 <div class='bucket'>
                                     <form accept-charset="UTF-8" action="/users?analytics%5BSign+Up+Page%5D=%2Fusers%2Fsign_up" method="post">
@@ -93,29 +107,20 @@
 
             <div class="row row--a" id="reviews">
                 <div class="cell well">
-                    <h2 class="mbm mbl--m tcs tss ttu twb">Talk Reviews (2)</h2>
+                    <h2 class="mbm mbl--m tcs tss ttu twb">Talk Reviews (<?php echo count($reviews); ?>)</h2>
                     <div class="g collection collection--m--1of2 js-reviews">
 
+                        <?php foreach($reviews as $row): ?>
                         <div class="g-b g-b--m--1of2 collection-item">
                             <div class="card card--b">
                                 <div class="bucket">
                                     <div class="bucket-content">
-
-                                        <p>Great!!! urum Pomponius cum materia saepe demersi et satus mea refactor tincidunt et ut. EGO would suadeo sit amet elit id quidem , si quis putat Backbone.js odora iam et nondum initiati .</p>
+                                        <p><?php echo $row->comment; ?></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="g-b g-b--m--1of2 collection-item">
-                            <div class="card card--b">
-                                <div class="bucket">
-                                    <div class="bucket-content">
-
-                                        <p>Certus sum enim quia ego Dominus locutus sum et faciam reversurum Pomponius cum materia saepe demersi et satus mea refactor tincidunt et ut. EGO would suadeo sit amet elit id quidem , si quis putat Backbone.js odora iam et nondum initiati .</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
 
                     </div>
                     <br/>

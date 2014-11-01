@@ -92,7 +92,13 @@ class Home extends CI_Controller {
 	function goto_detail_lecture_view() {
 		// id of the selected talk on the lecture listing page
 		$tid = $_GET['tid'];
-		$data["talk"] = $tid;
+		 
+
+		$this->load->model("talks");
+		$data["talk"] = $this->talks->get_detailed_talk_info($tid);
+		$data["reviews"] = $this->talks->get_talk_reviews($tid);
+
+		print_r($data["reviews"]);
 
 		$this->load->view('LectureDetailView', $data);
 	}

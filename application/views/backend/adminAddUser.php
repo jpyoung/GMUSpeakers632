@@ -40,14 +40,14 @@
 
 
             <div id="newSpeakerFormArea">
-                <form accept-charset="UTF-8" action="/users?analytics%5BSign+Up+Page%5D=%2Fusers%2Fsign_up" method="post">
+                <form accept-charset="UTF-8" action="<?php echo base_url(); ?>index.php/admin/add_new_user" method="post">
 
                     <fieldset class="form-field">
                         <label class="form-label" for="user_username">Speakers Full Name</label><input class="form-input" id="registration_username" name="user[username]" size="30" type="text" autofocus>
                     </fieldset>
 
                     <fieldset class="form-field">
-                        <label class="form-label" data-required="true" for="user_password">Linkedin Profile Image URL</label><input class="form-input mbxs js-showPassword-input" id="registration_password" name="user[password]" size="30" type="password">
+                        <label class="form-label" data-required="true" for="user_password">Linkedin Profile Image URL</label><input class="form-input mbxs js-showPassword-input" id="registration_password" name="user[password]" placeholder="Image URL">
                     </fieldset>
 
                     <fieldset class="form-field">

@@ -36,7 +36,10 @@ class Admin extends CI_Controller {
 	}
 
 	function goto_delete_speakers_page() {
-		$nid = $_GET['nid'];
+		$nid = 3;
+		if (isset($_GET['nid'])) {
+			$nid = $_GET['nid'];
+		}
 		$data['nav_selection'] = $nid;
 
 		$this->load->model("speakers");
@@ -82,7 +85,14 @@ class Admin extends CI_Controller {
 	// Delete Speaker Page
 	function delete_speaker() {
 		$uid = $_GET['dduid'];
-		echo $uid;
+		$this->load->model("speakers");
+		$this->speakers->delete_speaker($uid);
+		$this->goto_delete_speakers_page();
+	}
+
+	// Add new Speaker Page
+	function add_new_user() {
+		echo "Adding new Users";
 	}
 
 	// /**

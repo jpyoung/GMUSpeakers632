@@ -32,6 +32,30 @@ class Talks extends CI_Model {
 		return $over;
 
 	}
+
+
+	function get_detailed_talk_info($tid) {
+
+		$query = $this->db->query("SELECT u.u_id, u.bio, u.user_type, u.name, u.image_url, u.category, t.tid, t.description, t.title from user as u, Talks as t where u.u_id = t.u_id and t.tid = " . $tid);
+
+		//return 4;
+		return $query->row_array();
+
+	}
+
+	function get_talk_reviews($tid) {
+		$this->db->where('tid', $tid);
+		$query = $this->db->get('reviews');
+		if ( $query->num_rows ) {
+			return $query->result();
+		}
+		return false;
+	}
+
+
+//SELECT u.u_id, u.user_type, u.name, u.image_url, u.category, t.tid, t.description, t.title from user as u, Talks as t where u.u_id = t.u_id;
+
+// SELECT u.u_id, u.user_type, u.name, u.image_url, u.category, t.tid, t.description, t.title from user as u, Talks as t where u.u_id = t.u_id and t.tid = 4;
 	
 	//when a user logs in, this method is called to update the stats_tracker table.
 	//the username and timestamp are entered into this table.
