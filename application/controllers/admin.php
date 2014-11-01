@@ -52,8 +52,14 @@ class Admin extends CI_Controller {
 	}
 
 	function goto_delete_lectures_page() {
-		$nid = $_GET['nid'];
+		$nid = 4;
+		if (isset($_GET['nid'])) {
+			$nid = $_GET['nid'];
+		}		
 		$data['nav_selection'] = $nid;
+
+		$this->load->model("talks");
+		$data["talks"] = $this->talks->all_lecture_listing();
 
 		$this->load->view('backend/adminTalksEdits', $data);
 	}
@@ -91,6 +97,16 @@ class Admin extends CI_Controller {
 		$this->speakers->delete_speaker($uid);
 		$this->goto_delete_speakers_page();
 	}
+
+
+	function delete_talk() {
+		// function delete a individual talk on the delete talks page admin section
+		$dtid = $_GET['dtid'];
+		$this->load->model("speakers");
+		$this->speakers->delete_talk($dtid);
+		$this->goto_delete_lectures_page();
+	}
+
 
 	// Add new Speaker Page
 	function add_new_user() {

@@ -85,30 +85,7 @@ $(function(){
 </script>
 
 
-
-
-        <!--<div id="newSpeakerFormArea">-->
-            <!--<form accept-charset="UTF-8" action="/users?analytics%5BSign+Up+Page%5D=%2Fusers%2Fsign_up" method="post">-->
-
-                <!--<fieldset class="form-field">-->
-                    <!--<label class="form-label" for="user_username">Username</label><input class="form-input" id="registration_username" name="user[username]" size="30" type="text">-->
-                <!--</fieldset>-->
-
-                <!--<fieldset class="form-field">-->
-                    <!--<label class="form-label" data-required="true" for="user_password">Password</label><input class="form-input mbxs js-showPassword-input" id="registration_password" name="user[password]" size="30" type="password">-->
-                <!--</fieldset>-->
-
-                <!--<div class="bdrb mbm mtm mtl--m pbm tac">-->
-                    <!--<input class="form-btn btn mbm" data-disable-with="Creating…" name="commit" type="submit" value="Login">-->
-                <!--</div>-->
-
-            <!--</form>-->
-        <!--</div>-->
-
 </main>
-
-
-
 
 
 
