@@ -66,6 +66,13 @@ class Talks extends CI_Model {
 		return true;
 	}
 
+	function update_speaker_bio($data, $uid) {
+		// This function is used to update the bio on the speakers profile page.
+		$this->db->where('u_id', $uid);
+		$this->db->update('user', $data); 
+		return true;
+	}
+
 
 	function get_detailed_talk_info($tid) {
 		// This function retrieves the information for a detailed view a given talk

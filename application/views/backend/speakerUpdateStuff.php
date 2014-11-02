@@ -47,9 +47,31 @@
             <div class='mbl--m'>
                 <h2 class='label'>BIO</h2>
                 <div style="float: right">
-                    <a href="/paths/ruby" class="btn btn--html-css admin-delete-btn">Edit BIO</a>
+                    <a id="editTheSpeakerBio" href="#" class="btn btn--html-css admin-delete-btn">Edit BIO</a>
                 </div>
                 <p><?php echo $profile['bio']; ?></p>
+
+
+                <div id="speakerBioUpdateContainer" style="display:none;">
+                    <div class='bucket bucket--flag' style="background-color: white; width: 100%;">
+                        
+                        <form accept-charset="UTF-8" action="<?php echo base_url(); ?>index.php/dashboard/update_speaker_bio?upDBuid=<?php echo $profile['u_id']; ?>" method="post" style="margin: 0 20px 0 20px;">
+
+                            <fieldset class="form-field">
+                                <label class="form-label">BIO</label>
+                                <textarea rows="6" class="form-input" id="editSpeakerBIO" name="editSpeakerBIO" type="text"><?php echo $profile['bio']; ?></textarea>
+                            </fieldset>
+
+                            
+
+                            <div class="mbm mtm tac">
+                                <input class="form-btn btn mbm" style="min-width: 10px;" name="commitetb" type="submit" value="Update BIO">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
 
             </div>
 
@@ -118,6 +140,14 @@ $(function(){
             // Animation complete.
         });
     });
+
+
+    $("#editTheSpeakerBio").click(function() {
+        $("#speakerBioUpdateContainer").toggle( "slow", function() {
+            // Animation complete.
+        });
+    });
+
 
 }); 
 </script>

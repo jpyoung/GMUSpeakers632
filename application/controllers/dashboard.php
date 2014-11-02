@@ -85,6 +85,18 @@ class Dashboard extends CI_Controller {
 	}
 
 
+	function update_speaker_bio() {
+		$uid = $_GET['upDBuid'];
+		$edSpeakerBio = $_POST['editSpeakerBIO'];
+		if ($edSpeakerBio == "") {
+			$edSpeakerBio = "NA";
+		}
+		$d = array("bio" => $edSpeakerBio);
+		$this->load->model("talks");
+		$this->talks->update_speaker_bio($d, $uid);
+		$this->speaker_page();
+	}
+
 }
 
 ?>
