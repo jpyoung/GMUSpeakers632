@@ -23,7 +23,7 @@ class Login extends CI_Controller {
 	function login_view($warn=NULL, $message=NULL) {
 		$data['warn'] = $warn;
 		$data['message'] = $message;
-		$this->load->view('signIn', $data);
+		$this->load->view('home', $data);
 	}
 
 
@@ -59,18 +59,6 @@ class Login extends CI_Controller {
 			}
 		}
 	}
-	
-	
-	// /**
-	// * This function is called when the user clicks the "Forgot Password" link on 
-	// * the login view.  This function takes the user to the forgot password view.  
-	// *
-	// */
-	// function forgot_password() {
-	// 	$data['title'] = "Forgot Password";
-	// 	$this->load->view('forgot_password_view', $data);
-	// }
-
 
 	/**
 	* This function is called when the user pressed the log out on the top nav bar. 

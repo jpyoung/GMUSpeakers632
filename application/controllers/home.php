@@ -19,7 +19,7 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{
-
+		$this->session->sess_destroy();
 		$this->goto_speakerListing();
 
 		// $this->load->model("talks");
@@ -116,9 +116,6 @@ class Home extends CI_Controller {
 
 		$this->load->view('LectureDetailView', $data);
 	}
-
-
-
 
 	function filter_by() {
 		$fid = 1;

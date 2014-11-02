@@ -48,7 +48,6 @@ class Dashboard extends CI_Controller {
 		$this->load->view('backend/speakerUpdateStuff', $data);
 	}
 
-
 	function add_a_talk() {
 		$uid = $this->session->userdata('user_id');
 		$this->load->model("talks");
@@ -60,7 +59,6 @@ class Dashboard extends CI_Controller {
 		$this->talks->insert_new_talk_by_speaker($dd);
 		$this->speaker_page();
 	}
-
 
 	function speaker_delete_talk() {
 		$dtid = $_GET['sdtid'];
@@ -85,10 +83,6 @@ class Dashboard extends CI_Controller {
 		$this->talks->update_existing_talk($d, $dtid);
 		$this->speaker_page();
 	}
-
-
-	//Build a solid foundation in Git
-	
 
 
 }
