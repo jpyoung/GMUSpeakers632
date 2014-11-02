@@ -114,7 +114,17 @@ class Admin extends CI_Controller {
 		$fullName = $_POST["newUserFullName"];
 		$imgURL = $_POST["newUserURL"];
 		$cat = $_POST["categ"];
-		$dd = array("user_type" => 2, "name" => $fullName, "username" => $fullName, "password" => "speaker_" . str_replace(' ', '', $fullName), "category" => $cat, "image_url" => $imgURL);
+		$catID = 1;
+		if ($cat == "Business") {
+			$catID = 3;
+		}
+		if ($cat == "Science") {
+			$catID = 2;
+		}
+		if ($cat == "Other") {
+			$catID = 4;
+		}
+		$dd = array("user_type" => 2, "name" => $fullName, "username" => $fullName, "password" => "speaker_" . str_replace(' ', '', $fullName), "category" => $catID, "image_url" => $imgURL);
 		$this->load->model("speakers");
 		$this->speakers->add_speaker($dd);
 		$this->goto_add_speaker_page();

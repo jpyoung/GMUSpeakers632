@@ -55,7 +55,7 @@
 
 </br>
 
-
+<?php if ($talks != null || !isset($talks)){ ?>
  <?php foreach($talks as $row): ?>
     <div class='g-b g-b--l--1of2'>
         <article class='card card--a course' id='course_113' itemscope='' itemtype='http://schema.org/Product'>
@@ -92,7 +92,7 @@
 
     </div>
  <?php endforeach; ?>
-
+<?php } ?>
 
 
 </div>
