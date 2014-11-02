@@ -60,7 +60,7 @@
             <?php foreach($talks as $row): ?>
             <div class='card card--b mbm--m mbs' id='course-overview'>
                 <div style="float: right">
-                    <a href="#" class="btn btn--html admin-delete-btn">Edit</a>
+                    <a id="editSpeach_<?php echo $row->tid; ?>" href="#" class="btn btn--html admin-delete-btn">Edit</a>
                     <a href="<?php echo base_url(); ?>index.php/dashboard/speaker_delete_talk?sdtid=<?php echo $row->tid; ?>" class="btn btn--ruby admin-delete-btn">Delete</a>
                 </div>
                 <div class='bucket bucket--flag'>
@@ -75,24 +75,24 @@
                     </div>
                 </div>
 
-                <div id="editSpeach_<?php echo $row->tid; ?>" style="display: none;">
+                <div id="editCon_<?php echo $row->tid; ?>" style="display: none;">
                     <!--editing mode-->
                     <div class='bucket bucket--flag' style="background-color: white; width: 100%; margin-top: 10px; border-top: 1px solid black;">
                         <div><h3 style="text-align: center; margin-top: 10px;">Editing Mode</h3></div><br/>
-                        <form accept-charset="UTF-8" action="/users?analytics%5BSign+Up+Page%5D=%2Fusers%2Fsign_up" method="post" style="margin: 0 20px 0 20px;">
+                        <form accept-charset="UTF-8" action="<?php echo base_url(); ?>index.php/dashboard/speaker_edit_talk?sedtid=<?php echo $row->tid; ?>" method="post" style="margin: 0 20px 0 20px;">
 
                             <fieldset class="form-field">
                                 <label class="form-label" for="user_username">Topic</label>
-                                <input class="form-input" id="registration_username" name="user[username]" type="text" value="Tags : et rami Ipsum">
+                                <input class="form-input" id="editTalk_topic" name="editTalk_topic" type="text" value="<?php echo $row->title; ?>">
                             </fieldset>
 
                             <fieldset class="form-field">
                                 <label class="form-label" data-required="true" for="user_password">Description</label>
-                                <input class="form-input mbxs js-showPassword-input" id="registration_password" name="user[password]" value="Semita sub productione solvo git Tags : ramos remissionis , et Flickr Github Ipsum .">
+                                <input class="form-input mbxs js-showPassword-input" id="editTalk_desc" name="editTalk_desc" value="<?php echo $row->description; ?>">
                             </fieldset>
 
                             <div class="mbm mtm tac">
-                                <input class="form-btn btn mbm" style="min-width: 10px;" data-disable-with="Creating…" name="commit" type="submit" value="Save Edit">
+                                <input class="form-btn btn mbm" style="min-width: 10px;" name="commitet" type="submit" value="Save Edit">
                             </div>
 
                         </form>
@@ -105,18 +105,22 @@
             <?php endforeach; ?>
 
 
-// <script>
-// $(function(){
+<script>
+$(function(){
 
-//     $("#signinlink").click(function() {
-//         //alert("link clicked");
-//         $("#dropIn").toggle( "slow", function() {
-//             // Animation complete.
-//         });
-//     });
+    $("[id^=editSpeach_]").click(function() {
+        //alert("link clicked");
+        var theID = $(this).attr('id');
+        var temp = theID.split("_");
+        var idNum = temp[1];
 
-// }); 
-// </script>
+        $("#editCon_" + idNum).toggle( "slow", function() {
+            // Animation complete.
+        });
+    });
+
+}); 
+</script>
 
 
 

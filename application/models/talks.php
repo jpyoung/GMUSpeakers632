@@ -59,6 +59,13 @@ class Talks extends CI_Model {
 		return true; 
 	}
 
+	function update_existing_talk($data, $tid) {
+		// This function is used to update a talk in edit mode from the speakers profile page.
+		$this->db->where('tid', $tid);
+		$this->db->update('Talks', $data); 
+		return true;
+	}
+
 
 	function get_detailed_talk_info($tid) {
 		// This function retrieves the information for a detailed view a given talk

@@ -68,6 +68,25 @@ class Dashboard extends CI_Controller {
 		$this->speakers->delete_talk($dtid);
 		$this->speaker_page();
 	}
+
+	function speaker_edit_talk() {
+		$dtid = $_GET['sedtid'];
+		$topicE = $_POST["editTalk_topic"];
+		$descE = $_POST["editTalk_desc"];
+		// If the entered data are empty fields, then just insert NA so that its not empty.
+		if ($topicE == "") {
+			$topicE = "NA";
+		}
+		if ($descE == "") {
+			$descE = "NA";
+		}
+		$d = array("title" => $topicE, "description" => $descE);
+		$this->load->model("talks");
+		$this->talks->update_existing_talk($d, $dtid);
+		$this->speaker_page();
+	}
+
+
 	//Build a solid foundation in Git
 	
 
