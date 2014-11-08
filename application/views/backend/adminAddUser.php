@@ -14,7 +14,7 @@
     <div class='cell well'>
         <div class='cell cell--s well'>
             <h1 class='h2 mbm mtm tac thb tfl twn'>
-                Simply fill out the form to add a new user.
+                Simply fill out the form to add a speaker.
             </h1>
         </div>
 
