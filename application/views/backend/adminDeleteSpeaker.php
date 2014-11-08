@@ -21,7 +21,9 @@
         <br/>
         
         <div class='g mbl' id='course-list'>
-            
+
+
+            <?php if ($speakers) { ?>
             <?php foreach($speakers as $row): ?>
             <div class='g-b g-b--l--1of2'>
                 <article class='card card--a course' id='course_115'>
@@ -58,6 +60,9 @@
 
             </div>
             <?php endforeach; ?>  
+            <?php } else { ?> 
+                <p>Sorry, no results found.</p>
+            <?php } ?>
         </div>
         
 

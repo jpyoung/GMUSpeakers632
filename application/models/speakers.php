@@ -45,6 +45,15 @@ class Speakers extends CI_Model {
 		return true;
 	}
 
+	function username_exist($n) {
+		// username unique return false, if exists return true
+		$this->db->where('username', $n);
+		$query = $this->db->get('user');
+		if ( $query->num_rows ) {
+			return true;
+		}
+		return false;
+	}
 
 
 	function add_speaker($data) {

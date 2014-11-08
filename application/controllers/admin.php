@@ -34,6 +34,9 @@ class Admin extends CI_Controller {
 			$nid = $_GET['nid'];
 		}
 		$data['nav_selection'] = $nid;
+		unset($_POST["newUserURL"]);
+		unset($_POST["newUserURL"]);
+		unset($_POST["categ"]);
 
 		$this->load->view('backend/adminAddUser', $data);
 	}
@@ -108,27 +111,46 @@ class Admin extends CI_Controller {
 	}
 
 
+	function emptyCheck($str) {
+		// if not set or empty return false, else return true.
+		if (!isset($_POST[$str])) {
+			return false;
+		}
+		if (empty($_POST[$str])) {
+			return false;
+		}
+ 		return true;
+	}
+
 	// Add new Speaker Page
 	function add_new_user() {
 		//echo "Adding new Users";
-		$fullName = $_POST["newUserFullName"];
-		$imgURL = $_POST["newUserURL"];
-		$cat = $_POST["categ"];
-		$catID = 1;
-		if ($cat == "Business") {
-			$catID = 3;
+		$valid = ($this->emptyCheck("newUserFullName") && $this->emptyCheck("newUserURL") && $this->emptyCheck("categ")) ? true : false;
+		if ($valid) {
+			$this->load->model("speakers");
+			$fullName = $_POST["newUserFullName"];
+			$imgURL = $_POST["newUserURL"];
+			$cat = $_POST["categ"];
+			$catID = 1;
+			if ($cat == "Business") {
+				$catID = 3;
+			}
+			if ($cat == "Science") {
+				$catID = 2;
+			}
+			if ($cat == "Other") {
+				$catID = 4;
+			}
+			// checking to make sure the username is unique. If it is, then add user. If not then dont
+			if (!$this->speakers->username_exist(str_replace(' ', '', $_POST["newUserFullName"]))) {
+				$dd = array("user_type" => 2, "name" => $fullName, "username" => str_replace(' ', '', $fullName), "password" => "speaker_" . str_replace(' ', '', $fullName), "category" => $catID, "image_url" => $imgURL);
+				$this->load->model("speakers");
+				$this->speakers->add_speaker($dd);
+			}
 		}
-		if ($cat == "Science") {
-			$catID = 2;
-		}
-		if ($cat == "Other") {
-			$catID = 4;
-		}
-		$dd = array("user_type" => 2, "name" => $fullName, "username" => $fullName, "password" => "speaker_" . str_replace(' ', '', $fullName), "category" => $catID, "image_url" => $imgURL);
-		$this->load->model("speakers");
-		$this->speakers->add_speaker($dd);
 		$this->goto_add_speaker_page();
 	}
+
 
 
 }
