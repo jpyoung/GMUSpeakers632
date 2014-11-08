@@ -27,8 +27,10 @@ class Talks extends CI_Model {
 		$totalR = array();
 		$totalR['talks'] = $this->get_all_talks();
 		// $totalR['name'] = "Jack";
-		for ($x = 0; $x < count($totalR['talks']); $x++) {
-			$over[$x] = array('talks' => $totalR['talks'][$x], 'userinfo' => $this->find_user_picture($totalR['talks'][$x]->u_id));
+		if ($totalR['talks']) {
+			for ($x = 0; $x < count($totalR['talks']); $x++) {
+				$over[$x] = array('talks' => $totalR['talks'][$x], 'userinfo' => $this->find_user_picture($totalR['talks'][$x]->u_id));
+			}
 		}
 		return $over;
 

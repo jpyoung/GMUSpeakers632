@@ -72,7 +72,7 @@
 
                         <div class='card-section'>
                             <h3>Request Talk</h3>
-                            <h2 class='mbf tcs tss twb' style="font-size: 80%;">To request this talk, please submit the below form.  The GSB coordinator will get back to you with scheduling details</h2>
+                            <h2 class='mbf tcs tss twb' style="font-size: 80%;">To request this talk, please submit the below form.  The GSB coordinator will get back to you with scheduling details.</h2>
                             <div class='card-section'>
                                 <div class='bucket'>
                                     <form accept-charset="UTF-8" action="<?php echo base_url(); ?>index.php/home/goto_detail_lecture_view?tid=<?php echo $talk["tid"]; ?>" method="post">

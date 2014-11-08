@@ -21,8 +21,7 @@
 
 
         <div class='g mbl' id='course-list'>
-
-
+            <?php if ($talks) { ?>
             <?php foreach($talks as $row): ?>
             <div class='g-b g-b--l--1of2'>
                 <article class='card card--a course' id='course_115' itemscope='' itemtype='http://schema.org/Product'>
@@ -47,7 +46,9 @@
 
             </div>
             <?php endforeach; ?>
-
+            <?php } else { ?> 
+                <p>Sorry, no talks were found.</p>
+            <?php } ?>
 
 
         </div>

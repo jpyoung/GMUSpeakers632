@@ -3,8 +3,6 @@
 <!-- end: vertNavBar section -->
 
 
-<?php print_r($profile); ?>
-
 <main class='content'><div class='hero hero--banner hero--banner--dark row row--d' style="background: #112339;">
     <div class='cell well well--xl'>
         <div class='g'>
