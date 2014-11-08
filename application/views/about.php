@@ -53,7 +53,7 @@
             <p><strong>Attribution:</strong> The general feel and styling contained in this website is for the most part directly from a
                 CSS style sheet (BaseStyle.css) that I took from the CodeSchool.com website on 09/15/2014.  Since that date, I have made
                 modifications to that style sheet in order to better curtail it towards this project assignment.  For the aforementioned reasons,
-            I am giving this acknowledgement of CodeSchool.com</p>
+            I am giving this acknowledgement and citation to CodeSchool.com.</p>
 
 
         </div>
