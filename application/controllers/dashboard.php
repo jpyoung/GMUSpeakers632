@@ -43,7 +43,17 @@ class Dashboard extends CI_Controller {
 
 		$uid = $this->session->userdata('user_id');
 		$this->load->model("talks");
-		$data["profile"] = $this->talks->get_detailed_speaker_info($uid);
+		$this->load->model("speakers");
+		$tmp = $this->talks->get_detailed_speaker_info($uid);
+
+		if ($tmp) {
+			// first query failed to find anything because there are no talks
+			$data["profile"] = $tmp;
+		} else {
+			// backup query to retrieve the basics of the speaker
+			$data["profile"] = $this->speakers->get_speaker($uid);
+		}
+
 		$data["talks"] = $this->talks->get_talks_by_speaker($uid);
 		$this->load->view('backend/speakerUpdateStuff', $data);
 	}
@@ -51,12 +61,23 @@ class Dashboard extends CI_Controller {
 	function add_a_talk() {
 		$uid = $this->session->userdata('user_id');
 		$this->load->model("talks");
-		$data["profile"] = $this->talks->get_detailed_speaker_info($uid);
+		$this->load->model("speakers");
+		$tmp = $this->talks->get_detailed_speaker_info($uid);
+		if ($tmp) {
+			// first query failed to find anything because there are no talks
+			$data["profile"] = $tmp;
+		} else {
+			// backup query to retrieve the basics of the speaker
+			$data["profile"] = $this->speakers->get_speaker($uid);
+		}
 		$profName = $data["profile"]['name'];
 		$topic = $_POST["sp_topic"];
 		$desc = $_POST["sp_description"];
-		$dd = array("title" => $topic, "description" => $desc, "prof_name" => $profName, "u_id" => $uid);
-		$this->talks->insert_new_talk_by_speaker($dd);
+		if ($topic != '' & $desc != '') {
+			// if they press the add talk and the fields are empty, dont insert into db
+			$dd = array("title" => $topic, "description" => $desc, "prof_name" => $profName, "u_id" => $uid);
+			$this->talks->insert_new_talk_by_speaker($dd);
+		}
 		$this->speaker_page();
 	}
 

@@ -3,6 +3,8 @@
 <!-- end: vertNavBar section -->
 
 
+<?php print_r($profile); ?>
+
 <main class='content'><div class='hero hero--banner hero--banner--dark row row--d' style="background: #112339;">
     <div class='cell well well--xl'>
         <div class='g'>
@@ -79,6 +81,7 @@
             <h2 class='label'>Talk Listing</h2>
 
 
+            <?php if ($talks) { ?>
             <?php foreach($talks as $row): ?>
             <div class='card card--b mbm--m mbs' id='course-overview'>
                 <div style="float: right">
@@ -125,6 +128,9 @@
 
             </div>
             <?php endforeach; ?>
+            <?php } else { ?> 
+                <p>No talks were found</p>
+            <?php } ?>
 
 
 <script>
@@ -198,7 +204,6 @@ $(function(){
 </div>
 </div>
 </div>
-
 
 
 </main>

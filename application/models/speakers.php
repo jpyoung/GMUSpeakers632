@@ -13,6 +13,15 @@ class Speakers extends CI_Model {
 		return false;
 	}
 
+	function get_speaker($uid) {
+		// returning the speaker info for the speakerUpdateStuff page. This is only called when the initial gather fails
+		$query = $this->db->query('SELECT u.u_id, u.bio, u.user_type, u.name, u.image_url, u.category from user as u where u.u_id = ' . $uid);
+		if ($query->num_rows == 0) {
+			return 0;
+		}
+		return $query->row_array();
+	}
+
 	function delete_speaker($uid) {
 		// this function will delete a speaker by their passed in ID
 		$this->db->where('u_id', $uid);
