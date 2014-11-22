@@ -67,7 +67,18 @@ class Admin extends CI_Controller {
 		$this->load->view('backend/adminTalksEdits', $data);
 	}
 
+	function goto_impersonate_speakers_page() {
+		$nid = 5;
+		if (isset($_GET['nid'])) {
+			$nid = $_GET['nid'];
+		}
+		$data['nav_selection'] = $nid;
 
+		$this->load->model("speakers");
+		$data["speakers"] = $this->speakers->get_speakers();
+
+		$this->load->view('backend/adminImpersonateSpeaker', $data);
+	}
 
 
 	//Edit Home Page
@@ -99,6 +110,26 @@ class Admin extends CI_Controller {
 		$this->load->model("speakers");
 		$this->speakers->delete_speaker($uid);
 		$this->goto_delete_speakers_page();
+	}
+
+	function impersonate_speaker() {
+		$uid = $_GET['impuid'];
+		$this->load->model("speakers");
+		$r = $this->speakers->get_speaker_credentials($uid);
+		$this->load->model('login_model');
+		$user = $this->login_model->authenticate_user($r->username, $r->password);
+		if ( $user ) {
+		//found a matching user
+			$us_data = array (
+			'user_type' => 2,
+			'user_id' => $user->u_id,
+			'username' => $r->username,
+			'password' => $r->password,
+			'logged_in' => TRUE
+			);
+			$this->session->set_userdata($us_data);
+			redirect('dashboard');
+		}
 	}
 
 

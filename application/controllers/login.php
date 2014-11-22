@@ -94,9 +94,13 @@ class Login extends CI_Controller {
 	}
 
 
-	function login_verification() {
+	function login_verification($u = null, $p = null) {
 		$username = $_POST['l_username'];
 		$password = $_POST['l_password'];
+		if ($u != null && $p != null) {
+			$username = $u;
+			$password = $p;
+		}
 
 		if ( $username == '' || $password == '' ) {
 			//username or password should not be blank.

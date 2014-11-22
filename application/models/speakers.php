@@ -22,6 +22,15 @@ class Speakers extends CI_Model {
 		return $query->row_array();
 	}
 
+	function get_speaker_credentials($uid) {
+		$this->db->where('u_id', $uid);
+		$query = $this->db->get('user');
+		if ( $query->num_rows ) {
+			return $query->row();
+		}
+		return false;
+	}
+
 	function delete_speaker($uid) {
 		// this function will delete a speaker by their passed in ID
 		$this->db->where('u_id', $uid);

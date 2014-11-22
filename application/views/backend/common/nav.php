@@ -14,6 +14,9 @@
                 <li class="<?php echo (($nav_selection == 4) ? "is-active list-item nav-item" : "nav-item list-item"); ?>">
                     <a href="<?php echo base_url(); ?>index.php/admin/goto_delete_lectures_page?nid=4" class="nav-item-link list-item-link">Delete Talks</a>
                 </li>
+                <li class="<?php echo (($nav_selection == 5) ? "is-active list-item nav-item" : "nav-item list-item"); ?>">
+                    <a href="<?php echo base_url(); ?>index.php/admin/goto_impersonate_speakers_page?nid=5" class="nav-item-link list-item-link">Impersonate Speakers</a>
+                </li>
             </ul>
         </nav>
     </div>
