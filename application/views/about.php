@@ -21,7 +21,7 @@
         <div class="g">
             <div class="g-b g-b--m--1of4">
                 <div class="header-item header-item--brand brand fl" itemscope="" itemtype="http://schema.org/Organization">
-                        <a href="<?php echo base_url(); ?>index.php/home/" style="width: 189px; height: 34px;" class="btn btn--javascript card-item">Back</a>
+
                 </div>
             </div>
 

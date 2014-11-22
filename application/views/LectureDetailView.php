@@ -78,11 +78,11 @@
                                     <form accept-charset="UTF-8" action="<?php echo base_url(); ?>index.php/home/goto_detail_lecture_view?tid=<?php echo $talk["tid"]; ?>" method="post">
 
                                         <fieldset class="form-field">
-                                            <label class="form-label">Name</label><input class="form-input" type="text" placeholder="First & Last">
+                                            <label class="form-label">Name</label><input class="form-input" type="text" placeholder="John Doe" required>
                                         </fieldset>
 
                                         <fieldset class="form-field">
-                                            <label class="form-label" data-required="true">Email Address</label><input class="form-input mbxs js-showPassword-input" placeholder="johnDoe@gmu.edu">
+                                            <label class="form-label" data-required="true">Email Address</label><input class="form-input mbxs js-showPassword-input" placeholder="johnDoe@gmu.edu" type="email" required>
                                         </fieldset>
 
                                         <div class="bdrb mbm mtm mtl--m pbm tac">

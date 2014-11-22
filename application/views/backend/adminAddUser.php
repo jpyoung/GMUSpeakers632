@@ -43,11 +43,11 @@
                 <form accept-charset="UTF-8" action="<?php echo base_url(); ?>index.php/admin/add_new_user" method="post">
 
                     <fieldset class="form-field">
-                        <label class="form-label">Speakers Full Name</label><input class="form-input" id="newUserFullName" name="newUserFullName" size="30" type="text" autofocus>
+                        <label class="form-label">Name</label><input class="form-input" id="newUserFullName" name="newUserFullName" size="30" type="text" placeholder="John Doe" autofocus required>
                     </fieldset>
 
                     <fieldset class="form-field">
-                        <label class="form-label">Linkedin Profile Image URL</label><input class="form-input mbxs js-showPassword-input" id="newUserURL" name="newUserURL" type="text" placeholder="Image URL">
+                        <label class="form-label">Linkedin Profile Image URL</label><input class="form-input mbxs js-showPassword-input" id="newUserURL" name="newUserURL" placeholder="Image URL" required>
                     </fieldset>
 
                     <fieldset class="form-field">
