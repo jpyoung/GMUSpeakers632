@@ -32,7 +32,7 @@
                             <b class="srt">Menu</b>
                         </div>
                     </a><ol class="nav-list list fr">
-                    <li class="nav-item list-item"><a href="<?php echo base_url(); ?>index.php/home/goto_SignIn" class="nav-item-link list-item-link">Sign in</a></li>
+                    <li class="nav-item list-item"></li>
                 </ol>
                 </nav>
 

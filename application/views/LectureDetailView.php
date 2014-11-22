@@ -3,7 +3,19 @@
 <!-- end: vertNavBar section -->
 
 
-<main class='content'><div class='hero hero--banner hero--banner--dark row row--d' style="background: #112339;">
+<main class='content'>
+
+<!-- style="display: none;" -->
+<div id="dropIn" style="display: none;">
+    <!-- start: vertNavBar section -->
+    <?php include('loginDrop.php'); ?>
+    <!-- end: vertNavBar section -->
+</div>
+
+
+
+
+    <div class='hero hero--banner hero--banner--dark row row--d' style="background: #112339;">
     <div class='cell well well--xl'>
         <div class='g'>
             <div class='g-b g-b--m--3of4'>
