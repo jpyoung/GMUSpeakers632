@@ -179,11 +179,11 @@ $(function(){
                         <form accept-charset="UTF-8" action="<?php echo base_url(); ?>index.php/dashboard/add_a_talk" method="post">
 
                             <fieldset class="form-field">
-                                <label class="form-label">Topic</label><input class="form-input" id="sp_topic" name="sp_topic" size="30" type="text">
+                                <label class="form-label">Topic</label><input class="form-input" id="sp_topic" name="sp_topic" size="30" type="text" required>
                             </fieldset>
 
                             <fieldset class="form-field">
-                                <label class="form-label">Description</label><textarea class="form-input mbxs js-showPassword-input" id="sp_description" name="sp_description"></textarea>
+                                <label class="form-label">Description</label><textarea class="form-input mbxs js-showPassword-input" id="sp_description" name="sp_description" required></textarea>
                             </fieldset>
 
                             <div class="bdrb mbm mtm mtl--m pbm tac">

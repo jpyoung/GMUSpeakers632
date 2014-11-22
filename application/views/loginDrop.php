@@ -10,9 +10,9 @@
         <?php endIf; ?>
             <form accept-charset="UTF-8" action="<?php echo base_url();?>index.php/login/login_verification" method="post">
 
-                <input class="form-input drLogin" id="registration_username" name="l_username" size="30" type="text" value="<?php if (isset($message)) { if ($message != NULL) { echo $message; }}?>" placeholder="Username" autofocus>
+                <input class="form-input drLogin" id="registration_username" name="l_username" size="30" type="text" value="<?php if (isset($message)) { if ($message != NULL) { echo $message; }}?>" placeholder="Username" required autofocus>
                     
-                <input class="form-input mbxs js-showPassword-input drLogin" id="registration_password" name="l_password" size="30" type="password" placeholder="password">
+                <input class="form-input mbxs js-showPassword-input drLogin" id="registration_password" name="l_password" size="30" type="password" placeholder="Password" required>
 
                 <div class="mbm mtm mtl--m pbm tac">
                     <input class="form-btn btn mbm" style="width:300px;" data-disable-with="Creating…" name="commit" type="submit" value="Login">

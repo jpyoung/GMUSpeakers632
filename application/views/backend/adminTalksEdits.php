@@ -15,7 +15,7 @@
     <div class='cell well'>
         <div class='cell cell--s well'>
             <h1 class='h2 mbm mtm tac thb tfl twn'>
-                Simply press the delete button to delete a speakers talks.
+                Simply press the delete button to delete a talk.
             </h1>
         </div>
 
